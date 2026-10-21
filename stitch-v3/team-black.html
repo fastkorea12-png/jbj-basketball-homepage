@@ -1,0 +1,410 @@
+<!doctype html>
+<html class="light" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>JBJ 블랙 농구팀 | 발달장애 농구팀 - JBJ BASKETBALL CLUB</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb695",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#351000",
+            "surface-container-high": "#eae8e2",
+            "on-tertiary-container": "#d0652e",
+            "surface": "#fbf9f3",
+            "on-tertiary": "#ffffff",
+            "background": "#fbf9f3",
+            "surface-dim": "#dcdad4",
+            "primary-container": "#1c1b1b",
+            "primary-fixed-dim": "#c8c6c5",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#444748",
+            "on-surface": "#1b1c19",
+            "on-secondary-fixed": "#261900",
+            "tertiary-container": "#351000",
+            "secondary-fixed-dim": "#e7c179",
+            "inverse-surface": "#30312d",
+            "inverse-primary": "#c8c6c5",
+            "on-background": "#1b1c19",
+            "surface-container-highest": "#e4e2dd",
+            "outline": "#747878",
+            "surface-tint": "#5f5e5e",
+            "inverse-on-surface": "#f2f1eb",
+            "primary": "#000000",
+            "tertiary-fixed": "#ffdbcc",
+            "on-primary-container": "#858383",
+            "surface-container-low": "#f5f3ee",
+            "secondary": "#765a1c",
+            "surface-container": "#f0eee8",
+            "secondary-fixed": "#ffdea2",
+            "on-primary-fixed-variant": "#474746",
+            "outline-variant": "#c4c7c7",
+            "primary-fixed": "#e5e2e1",
+            "surface-variant": "#e4e2dd",
+            "error-container": "#ffdad6",
+            "secondary-container": "#ffd88d",
+            "surface-bright": "#fbf9f3",
+            "on-secondary-fixed-variant": "#5c4303",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#1c1b1b",
+            "on-secondary-container": "#795c1e",
+            "tertiary": "#000000"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Noto Sans"],
+            "body-lg": ["Noto Sans"],
+            "headline-lg": ["Noto Sans"],
+            "label-caps": ["Barlow Condensed"],
+            "display-hero-mobile": ["Barlow Condensed"],
+            "body-md": ["Noto Sans"],
+            "headline-md": ["Noto Sans"],
+            "label-sm": ["Barlow Condensed"],
+            "display-hero": ["Barlow Condensed"],
+            "headline-sm": ["Noto Sans"],
+            "stat-lg": ["Barlow Condensed"],
+            "body-sm": ["Noto Sans"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["26px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-caps": ["14px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "display-hero-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "stat-lg": ["48px", { "lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>body{word-break:keep-all}img{max-width:100%}a,button{min-height:44px} :focus-visible{outline:3px solid #df7139;outline-offset:3px}.review-banner{padding:10px 18px;background:#191919;color:#f5e4b0;font:12px sans-serif;text-align:center}.review-banner a{text-decoration:underline}</style></head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col">
+<div class="review-banner">Stitch 재디자인 검토본 · 내용 교정본 · <a href="../v2.html">기존 시안과 비교 ↗</a></div><nav aria-label="Stitch 시안 화면 선택" class="review-banner"><a href="home.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">메인</a><a href="branch-seocho.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">서초 지점</a><a href="team-black.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">블랙 팀</a><a href="about.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">JBJ 이야기</a><a href="home-mobile.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">모바일 시안</a></nav><!-- TOP NAV BAR (Shared Component Anchor) -->
+<header class="w-full bg-surface dark:bg-primary-container border-b border-outline-variant/30 dark:border-outline/20 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-space-md md:px-margin max-w-[1320px] mx-auto h-16">
+<!-- Brand Logo Anchor -->
+<a class="font-display-hero-mobile text-headline-md tracking-tight font-bold text-primary dark:text-on-primary flex items-center gap-2" href="home.html">
+<span class="">JBJ BASKETBALL CLUB</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-on-primary transition-colors" href="about.html">
+          JBJ 이야기
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-on-primary transition-colors" href="home.html#academies">
+          지점별 농구교실
+        </a>
+<!-- ACTIVE NAVIGATION TAB (Exact Match: 발달장애 농구팀) -->
+<a class="text-primary dark:text-on-primary font-bold border-b-2 border-secondary pb-1" href="team-black.html">
+          발달장애 농구팀
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-on-primary transition-colors" href="../v2.html#gallery">
+          사진·활동
+        </a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<a class="bg-primary hover:bg-tertiary-container text-on-primary font-label-caps text-label-caps px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm active:scale-98" href="../v2.html#try">
+<span class="">체험 문의</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- SIBLING TEAM SELECTOR BAR (Architectural Court Line) -->
+<section class="bg-surface-container-low border-b border-outline-variant/30 w-full">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin py-3 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm tracking-wider">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">ACADEMY DIVISION // TEAMS</span>
+</div>
+<!-- Selector Chips -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
+<!-- Selected Tab -->
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded border border-primary font-label-caps text-label-caps shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="">JBJ 블랙 (선택됨)</span>
+</button>
+<!-- Unselected Tab: Gold -->
+<a class="flex items-center gap-2 px-4 py-2 bg-surface text-on-surface-variant hover:text-primary rounded border border-outline-variant/40 font-label-caps text-label-caps transition-colors" href="../team-gold.html">
+<span class="w-2.5 h-2.5 rounded-full bg-[#806324]"></span>
+<span class="">JBJ 골드</span>
+</a>
+<!-- Unselected Tab: Third Team -->
+<a class="flex items-center gap-2 px-4 py-2 bg-surface-container text-outline hover:text-on-surface rounded border border-dashed border-outline-variant font-label-caps text-label-caps transition-colors" href="../team-pending.html">
+<span class="material-symbols-outlined text-xs">pending</span>
+<span class="">[세 번째 팀명 확인 중]</span>
+</a>
+</div>
+</div>
+</section>
+<!-- MAIN TEAM HERO (Dignified, Athletic & Architectural) -->
+<section class="w-full bg-surface py-12 md:py-16 border-b border-outline-variant/30 relative overflow-hidden">
+<!-- Subtle Court Keyline Geometry -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.03] flex items-center justify-center">
+<div class="w-[600px] h-[600px] rounded-full border-[2px] border-primary"></div>
+<div class="absolute w-full h-[1px] bg-primary"></div>
+</div>
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin relative z-10">
+<!-- Metadata Tag Cluster -->
+<div class="flex flex-wrap items-center gap-3 mb-6">
+<span class="bg-primary text-on-primary font-label-caps text-label-sm px-3 py-1 rounded tracking-widest uppercase">
+          JBJ BASKETBALL TEAM
+        </span>
+<span class="bg-surface-container text-secondary font-label-caps text-label-sm px-3 py-1 rounded border border-secondary/30 flex items-center gap-1.5 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          발달장애 농구팀
+        </span>
+<span class="font-label-caps text-label-sm text-outline tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">palette</span>
+          JBJ BLACK
+        </span>
+</div>
+<!-- Hero Titles & Subtitle -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-12">
+<p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-1 font-bold">
+            JBJ BLACK BASKETBALL TEAM
+          </p>
+<h1 class="hidden md:block font-display-hero text-display-hero text-primary uppercase font-bold tracking-tight">
+            JBJ 블랙 농구팀
+          </h1>
+<h1 class="md:hidden font-display-hero-mobile text-display-hero-mobile text-primary uppercase font-bold">
+            JBJ 블랙 농구팀
+          </h1>
+<p class="mt-4 font-headline-sm text-headline-sm text-on-surface-variant max-w-2xl font-normal leading-relaxed">
+            2025년 제8회 JBJ 유소년 농구대회 참가팀
+          </p>
+</div>
+<!-- Quick Stat Highlights -->
+
+</div>
+</div>
+</section>
+<!-- EDITORIAL SPREAD & BENTO MODULES -->
+<main class="w-full max-w-[1320px] mx-auto px-space-md md:px-margin py-12 flex-1">
+<!-- Bento Grid Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- LEFT COLUMN: Team Story & Core Principles (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Team Hero Photo Card (From Provided Reference) -->
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-lg overflow-hidden relative shadow-sm">
+<div class="h-3 w-full bg-primary flex">
+<div class="h-full w-24 bg-secondary"></div>
+</div>
+<div class="p-4 sm:p-6">
+<div class="relative w-full aspect-[16/10] bg-surface-container rounded overflow-hidden border border-outline-variant/30"><div class="w-full h-full flex flex-col items-center justify-center bg-surface-container-high p-8 text-center relative">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center border border-outline-variant/40 mb-3">
+<span class="material-symbols-outlined text-secondary text-3xl">sports_basketball</span>
+</div>
+<h4 class="font-headline-sm text-primary font-bold mb-1">JBJ BASKETBALL COURT</h4>
+<p class="font-body-sm text-on-surface-variant max-w-md">[팀 소속을 확인한 사진을 준비 중입니다]</p>
+<div class="absolute bottom-3 left-3 bg-primary/90 text-on-primary text-xs px-3 py-1 font-label-caps tracking-wider rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+<span class="">공식 훈련 및 활동 안내</span>
+</div>
+</div></div>
+<!-- Team Story Narrative -->
+<div class="mt-6 border-l-2 border-secondary pl-4">
+<h2 class="font-label-caps text-label-caps text-secondary uppercase tracking-widest font-bold mb-1">
+                OUR STORY // 팀 이야기
+              </h2>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">
+                JBJ 블랙을 소개합니다
+              </h3>
+<p class="mt-3 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                JBJ 블랙은 2025년 8월 15일 제8회 JBJ 유소년 농구대회(대한통합농구만세)에 발달장애 청소년 농구단으로 참가했습니다. [팀 소개 확인 중]
+              </p>
+</div>
+</div>
+</div>
+<!-- 3 ATHLETIC CORE PRINCIPLES -->
+
+</div>
+<!-- RIGHT COLUMN: Honest Specifications, Roster Info, Tournament Ledger (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- HONEST & DIGNIFIED SPECIFICATIONS LEDGER -->
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-lg p-6 relative">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary text-xl">verified</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">공식 팀 프로필 및 운영 정보</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 border-b border-outline-variant/30 pb-4">
+            학부모 및 서포터즈 여러분께 정확하고 정직한 정보를 전달하기 위해 확인한 내용만 안내합니다.
+          </p>
+<div class="space-y-4">
+<!-- Specification Item 1 -->
+<div class="bg-surface p-4 rounded border border-outline-variant/20">
+<div class="flex items-center justify-between text-xs font-label-caps text-secondary font-bold mb-1">
+<span class="">HEAD COACH &amp; STAFF</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-on-surface">지도진 구성</span>
+</div>
+<h3 class="font-headline-sm text-body-lg text-primary font-bold">[팀 소개·지도자 확인]</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                [팀별 소개·지도자 정보 확인 중]
+              </p>
+</div>
+<!-- Specification Item 2 -->
+<div class="bg-surface p-4 rounded border border-outline-variant/20">
+<div class="flex items-center justify-between text-xs font-label-caps text-secondary font-bold mb-1">
+<span class="">TRAINING GROUND &amp; SCHEDULE</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-on-surface">정기 훈련</span>
+</div>
+<h3 class="font-headline-sm text-body-lg text-primary font-bold">[훈련 장소·시간 확인]</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                [팀별 훈련 장소·요일·시간 확인 중]
+              </p>
+</div>
+<!-- Specification Item 3 -->
+<div class="bg-surface p-4 rounded border border-outline-variant/20">
+<div class="flex items-center justify-between text-xs font-label-caps text-secondary font-bold mb-1">
+<span class="">ADMISSION &amp; ELIGIBILITY</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-on-surface">선발 기준</span>
+</div>
+<h3 class="font-headline-sm text-body-lg text-primary font-bold">[참여 대상·모집·비용·연락처 확인]</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                [참여 절차·모집 조건 확인 중]
+              </p>
+</div>
+</div>
+</div>
+<!-- TOURNAMENT HISTORY & ACTIVITIES -->
+<div class="bg-primary-container text-on-primary rounded-lg p-6 relative overflow-hidden">
+<div class="flex items-center justify-between mb-4 border-b border-outline/20 pb-3">
+<div>
+<span class="font-label-caps text-label-sm text-secondary-fixed-dim uppercase tracking-wider font-bold">TRACK RECORD</span>
+<h2 class="font-headline-sm text-headline-sm text-on-primary font-bold">활동 및 대회 참가 이력</h2>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim">emoji_events</span>
+</div>
+<!-- Tournament Ledger List -->
+<ul class="space-y-3 font-body-md text-body-md divide-y divide-outline/10"><li class="pt-2 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-lg mt-0.5">check_circle</span>
+<div>
+<span class="font-bold block text-on-primary">2025 통합농구대회 참가</span>
+<span class="text-on-primary-container text-xs">2025년 대회 참가 기사에서 확인</span>
+</div>
+</li>
+<li class="pt-2 flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-lg mt-0.5">pending</span>
+<div>
+<span class="font-bold block text-on-primary-container">[친선 교류전 및 대회 참가 이력 확인 중]</span>
+<span class="text-on-primary-container/70 text-xs">팀별 확인 후 안내합니다.</span>
+</div>
+</li></ul>
+<div class="mt-6 pt-4 border-t border-outline/20 text-center">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">
+              DIGNITY · DISCIPLINE · TOGETHERNESS
+            </span>
+</div>
+</div>
+<!-- HONEST INQUIRY NOTE CARD -->
+<div class="bg-surface-container border border-secondary/40 rounded-lg p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-caps text-label-caps font-bold">INQUIRY NOTICE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">
+              입단 및 교류전 문의 안내
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">팀 입단 및 서포터즈, 친선 교류전 문의는 JBJ 공식 인스타그램(<span class="font-semibold text-primary">@jbj_basketball_club</span>) 또는 서초본점 문의번호(<span class="font-semibold text-primary">0507-1474-7723</span>)로 연락해 주시기 바랍니다.</p>
+</div>
+<div class="mt-6 flex flex-col sm:flex-row gap-3">
+<a class="flex-1 bg-surface hover:bg-surface-container-high border border-outline-variant text-primary font-label-caps text-label-caps py-2.5 px-4 rounded text-center transition-colors flex items-center justify-center gap-2" href="https://instagram.com/jbj_basketball_club" target="_blank">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+<span class="">Instagram 문의</span>
+</a>
+<a class="flex-1 bg-secondary hover:bg-on-secondary-container text-on-primary font-label-caps text-label-caps py-2.5 px-4 rounded transition-colors flex items-center justify-center gap-2 shadow-sm" href="tel:050714747723">
+<span class="material-symbols-outlined text-sm">call</span>
+<span class="">JBJ Instagram 문의</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FOOTER (Shared Component Anchor) -->
+<footer class="bg-primary-container dark:bg-surface-container-lowest border-t border-outline/20 text-on-primary dark:text-on-surface">
+<div class="w-full px-space-md md:px-margin py-space-xl max-w-[1320px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-6 border-b border-outline/20">
+<!-- Footer Brand Anchor -->
+<div>
+<span class="font-display-hero-mobile text-headline-sm font-bold text-on-primary dark:text-primary tracking-tight">
+            JBJ BASKETBALL CLUB
+          </span>
+<p class="font-body-sm text-body-sm text-on-primary-container dark:text-on-surface-variant mt-1">
+            극복과 긍정, 농구로 전하는 가능성.
+          </p>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-wrap gap-4 sm:gap-6 font-label-caps text-label-caps">
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface transition-colors" href="../v2.html#try">
+            전화 문의
+          </a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface transition-colors" href="https://www.instagram.com/jbj_basketball_club/">
+            Instagram @jbj_basketball_club
+          </a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface transition-colors" href="home.html#academies">
+            지점 안내
+          </a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface transition-colors" href="home.html">
+            오시는 길
+          </a>
+<a class="text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface transition-colors" href="home.html">
+            개인정보처리방침
+          </a>
+</div>
+</div>
+<!-- Copyright Notice -->
+<div class="pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+<p class="font-body-sm text-body-sm text-on-primary-container dark:text-on-surface-variant">
+          공개 미리보기 · JBJ 승인 전 디자인 시안 | JBJ BASKETBALL CLUB. ALL RIGHTS RESERVED.
+        </p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-primary-container tracking-wider"></span>
+</div>
+</div>
+</div>
+</footer>
+
+
+</body></html>

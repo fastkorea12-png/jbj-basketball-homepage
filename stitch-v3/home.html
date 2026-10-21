@@ -1,0 +1,522 @@
+<!doctype html>
+<html class="scroll-smooth" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>JBJ BASKETBALL CLUB | 함께 뛰고, 한 뼘 더 자라는 곳</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Noto+Sans+KR:wght@300;400;500;600;700;800&amp;family=Noto+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb695",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#351000",
+            "surface-container-high": "#eae8e2",
+            "on-tertiary-container": "#d0652e",
+            "surface": "#fbf9f3",
+            "on-tertiary": "#ffffff",
+            "background": "#fbf9f3",
+            "surface-dim": "#dcdad4",
+            "primary-container": "#1c1b1b",
+            "primary-fixed-dim": "#c8c6c5",
+            "on-tertiary-fixed-variant": "#7b2f00",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#444748",
+            "on-surface": "#1b1c19",
+            "on-secondary-fixed": "#261900",
+            "tertiary-container": "#351000",
+            "secondary-fixed-dim": "#e7c179",
+            "inverse-surface": "#30312d",
+            "inverse-primary": "#c8c6c5",
+            "on-background": "#1b1c19",
+            "surface-container-highest": "#e4e2dd",
+            "outline": "#747878",
+            "surface-tint": "#5f5e5e",
+            "inverse-on-surface": "#f2f1eb",
+            "primary": "#000000",
+            "tertiary-fixed": "#ffdbcc",
+            "on-primary-container": "#858383",
+            "surface-container-low": "#f5f3ee",
+            "secondary": "#765a1c",
+            "surface-container": "#f0eee8",
+            "secondary-fixed": "#ffdea2",
+            "on-primary-fixed-variant": "#474746",
+            "outline-variant": "#c4c7c7",
+            "primary-fixed": "#e5e2e1",
+            "surface-variant": "#e4e2dd",
+            "error-container": "#ffdad6",
+            "secondary-container": "#ffd88d",
+            "surface-bright": "#fbf9f3",
+            "on-secondary-fixed-variant": "#5c4303",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#1c1b1b",
+            "on-secondary-container": "#795c1e",
+            "tertiary": "#000000"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Noto Sans", "Noto Sans KR"],
+            "body-lg": ["Noto Sans", "Noto Sans KR"],
+            "headline-lg": ["Noto Sans", "Noto Sans KR"],
+            "label-caps": ["Barlow Condensed"],
+            "display-hero-mobile": ["Barlow Condensed"],
+            "body-md": ["Noto Sans", "Noto Sans KR"],
+            "headline-md": ["Noto Sans", "Noto Sans KR"],
+            "label-sm": ["Barlow Condensed"],
+            "display-hero": ["Barlow Condensed"],
+            "headline-sm": ["Noto Sans", "Noto Sans KR"],
+            "stat-lg": ["Barlow Condensed"],
+            "body-sm": ["Noto Sans", "Noto Sans KR"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["26px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-lg": ["17px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-lg": ["36px", {"lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-caps": ["14px", {"lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+            "display-hero": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "stat-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Court hairline motifs */
+    .court-keyline {
+      background: linear-gradient(90deg, rgba(25,25,25,0.08) 0%, rgba(25,25,25,0.18) 50%, rgba(25,25,25,0.08) 100%);
+    }
+    .court-arc {
+      border: 1px solid rgba(128, 99, 36, 0.22);
+      border-radius: 50%;
+    }
+  </style>
+<style>body{word-break:keep-all}img{max-width:100%}a,button{min-height:44px} :focus-visible{outline:3px solid #df7139;outline-offset:3px}.review-banner{padding:10px 18px;background:#191919;color:#f5e4b0;font:12px sans-serif;text-align:center}.review-banner a{text-decoration:underline}</style></head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary selection:text-on-primary">
+<div class="review-banner">Stitch 재디자인 검토본 · 내용 교정본 · <a href="../v2.html">기존 시안과 비교 ↗</a></div><nav aria-label="Stitch 시안 화면 선택" class="review-banner"><a href="home.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">메인</a><a href="branch-seocho.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">서초 지점</a><a href="team-black.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">블랙 팀</a><a href="about.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">JBJ 이야기</a><a href="home-mobile.html" style="display:inline-block;margin:0 10px;min-height:30px;line-height:30px">모바일 시안</a></nav><!-- TOP APP BAR (Shared Component Anchored) -->
+<header class="sticky top-0 z-50 bg-surface dark:bg-primary-container border-b border-outline-variant/30 dark:border-outline/20 transition-colors">
+<div class="flex justify-between items-center w-full px-space-md md:px-margin max-w-[1320px] mx-auto h-16">
+<!-- Brand Logo / Wordmark -->
+<a class="flex items-center gap-3 group" href="home.html">
+<div class="w-8 h-8 bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps tracking-tighter rounded">
+          JBJ
+        </div>
+<span class="font-display-hero-mobile text-headline-md tracking-tight font-bold text-primary dark:text-on-primary">
+          JBJ BASKETBALL CLUB
+        </span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-on-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="#about">
+          JBJ 이야기
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-on-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="home.html#academies">
+          지점별 농구교실
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-on-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="#adaptive">
+          발달장애 농구팀
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-on-primary transition-colors font-label-caps text-label-caps uppercase tracking-wider" href="#activities">
+          사진·활동
+        </a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center justify-center h-10 px-5 bg-secondary hover:bg-on-secondary-container text-on-secondary font-label-caps text-label-caps rounded transition-all active:scale-[0.98]" href="#inquiry">
+          체험 문의
+        </a>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION: Editorial Asymmetry with Court Disciplines -->
+<section class="relative pt-12 md:pt-20 pb-16 md:pb-24 overflow-hidden border-b border-outline-variant/30">
+<!-- Background Court Accent Lines -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-[580px] h-[580px] court-arc pointer-events-none -mr-48 opacity-40"></div>
+<div class="absolute right-72 top-0 bottom-0 w-[1px] bg-outline-variant/20 pointer-events-none hidden lg:block"></div>
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-8 space-y-6">
+
+<h1 class="font-headline-lg text-headline-lg md:text-[54px] md:leading-[64px] font-extrabold text-on-surface tracking-tight break-keep">
+              함께 뛰고, <br class="hidden md:inline">
+<span class="text-secondary underline decoration-secondary/30 decoration-2 underline-offset-8">한 뼘 더 자라는</span> 곳.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl break-keep">
+              JBJ는 농구를 통해 극복과 긍정의 마음을 나눕니다. 가까운 농구교실과 함께 뛰는 팀을 만나보세요.
+            </p>
+<!-- Quick Metrics / Stat Line -->
+<div class="pt-4 border-t border-outline-variant/30 text-on-surface-variant font-body-sm space-y-1"><p class="font-semibold text-on-surface">지점별 농구교실 · 발달장애 농구팀</p><p class="text-outline">수업 참관 및 입단 문의는 전화 또는 인스타그램을 통해 상담 가능합니다.</p></div>
+</div>
+<!-- Hero Trailing Key Action -->
+<div class="lg:col-span-4 flex flex-col justify-end gap-3 pb-2">
+<div class="p-6 bg-surface-container border-l-4 border-secondary rounded"><span class="font-label-caps text-label-caps text-secondary font-bold block mb-1">PROGRAM CONSULTATION</span><p class="font-body-md text-body-md text-on-surface font-semibold mb-3">반별 시간·모집 연령·수강료 맞춤 상담</p><a class="inline-flex items-center gap-2 font-headline-sm text-headline-sm text-primary font-bold hover:text-secondary transition-colors" href="tel:050714747723"><span class="material-symbols-outlined text-secondary">phone_in_talk</span>0507-1474-7723</a><span class="block font-body-sm text-body-sm text-outline mt-1">서초본점 상담 및 안내 직통</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- DUAL GATEWAYS (Critical Distinction: 지점별 농구교실 vs 발달장애 농구팀) -->
+<section class="py-16 md:py-20 bg-surface-container-low border-b border-outline-variant/30">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-widest block mb-1">ACADEMY PILLARS</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">두 개의 심장, 하나의 코트</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            지점별 농구교실과 발달장애 농구팀 중 원하는 안내를 선택하세요.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Gateway 1: 지점별 농구교실 -->
+<div class="relative bg-surface-container-lowest border border-outline-variant/40 p-8 md:p-10 rounded shadow-sm hover:border-secondary transition-all">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold px-3 py-1 bg-surface-container rounded">
+                YOUTH DIVISION
+              </span>
+<span class="material-symbols-outlined text-secondary">sports_basketball</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-3">지점별 농구교실</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+              서초본점·산본퍼스트센터점·용인노리터점의 수업과 문의 정보를 확인해 보세요.
+            </p>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant mb-8 border-t border-outline-variant/30 pt-6">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+<span class="">서초본점 · 산본퍼스트센터점 · 용인노리터점</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+<span class="">[지점별 반 편성·수업시간 확인 중]</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+<span class="">JBJ 유소년 농구대회 · YMCA 바스켓타임</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary font-bold hover:text-secondary group" href="home.html#academies">
+              지점별 교실 안내 바로보기
+              <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<!-- Gateway 2: 발달장애 농구팀 -->
+<div class="relative bg-surface-container-lowest border border-outline-variant/40 p-8 md:p-10 rounded shadow-sm hover:border-secondary transition-all">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold px-3 py-1 bg-surface-container rounded border border-secondary/30">
+                ADAPTIVE SPORTS DIVISION
+              </span>
+<span class="material-symbols-outlined text-secondary">diversity_3</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-3">발달장애 농구팀 (JBJ 블랙 &amp; 골드)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+              JBJ 블랙과 JBJ 골드의 소개와 활동을 만나보세요. 세 번째 팀은 정식 이름을 확인하고 있습니다.
+            </p>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant mb-8 border-t border-outline-variant/30 pt-6">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+<span class="">함께하는 농구팀: <strong>JBJ 블랙</strong> &amp; <strong>JBJ 골드</strong></span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+<span class="">[팀별 훈련·참여 안내 확인 중]</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+<span class="">2025년 통합농구대회 참가 보도</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-secondary font-bold hover:text-on-secondary-container group" href="#adaptive">
+              발달장애 농구팀 상세 소개
+              <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- COURT & REAL ATMOSPHERE SECTION (Actual Court Photos: IMAGE_5 & IMAGE_6) -->
+<section class="py-16 md:py-24 bg-surface border-b border-outline-variant/30">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Editorial Description & Specs -->
+<div class="lg:col-span-5 space-y-6"><span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-widest block">FACILITY INFORMATION</span><h2 class="font-headline-lg text-headline-lg text-on-surface font-bold break-keep">농구 전용 코트와 체육관 시설.</h2><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">유소년 및 농구 훈련을 위한 전용 시설을 갖추고 있으며, 수업과 대관을 함께 진행하고 있습니다.</p><div class="bg-surface-container p-6 rounded border border-outline-variant/40 space-y-4"><div class="flex justify-between items-center pb-3 border-b border-outline-variant/30"><span class="font-label-caps text-label-caps text-outline uppercase">COURT DIMENSIONS</span><span class="font-headline-sm text-headline-sm font-bold text-primary">22m × 14m × 8m (층고)</span></div><div class="flex justify-between items-center"><span class="font-label-caps text-label-caps text-outline uppercase">PARKING</span><span class="font-body-md text-body-md font-semibold text-on-surface">건물 내 주차 가능</span></div></div><div class="pt-2"><div class="flex items-center gap-4 text-on-surface-variant font-body-sm text-body-sm"><span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary">verified</span>실내 농구 코트</span><span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary">verified</span>[참관 안내 문의]</span></div></div></div>
+<!-- Real Image Display -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-3">
+<div class="relative overflow-hidden rounded border border-outline-variant/40 bg-surface-container">
+<img class="w-full h-80 object-cover hover:scale-105 transition-transform duration-300" data-alt="A brightly lit, real indoor basketball training court at JBJ Basketball Club showing the black and orange modular sports tiles, pristine white court keylines, and padded structural pillars featuring Kobe and Zion tributes. In the background, official banners for the Christmas Basketball Tournament hang proudly along the wall. The warm institutional gym atmosphere is clear and authentic with no synthetic filters." src="../assets/photo-17.jpg" alt="JBJ 서초본점 시설 사진" loading="lazy" style="object-fit:contain;max-width:100%;background:#eee8d9">
+<div class="absolute bottom-3 left-3 bg-primary/90 text-on-primary px-3 py-1 font-label-sm text-label-sm rounded uppercase">
+                  SEOCHO COURT FRONT VIEW
+                </div>
+</div>
+<p class="font-body-sm text-body-sm text-outline px-1">
+                ▲ 서초본점 코트 · 기존 JBJ 홈페이지 시설 사진
+              </p>
+</div>
+<div class="space-y-3 sm:mt-8">
+<div class="relative overflow-hidden rounded border border-outline-variant/40 bg-surface-container">
+<img class="w-full h-80 object-cover hover:scale-105 transition-transform duration-300" data-alt="An angled perspective of the JBJ Basketball Club facility in Seocho showing the prominent entry pillar adorned with a Welcome to JBJ gold-foil typography column. The high-ceiling court with industrial lighting exposes the spacious playing surface with orange painted keys, safety padding along the perimeter, and professional basketball hoops." src="../assets/photo-16.jpg" alt="JBJ 서초본점 시설 사진" loading="lazy" style="object-fit:contain;max-width:100%;background:#eee8d9">
+<div class="absolute bottom-3 left-3 bg-primary/90 text-on-primary px-3 py-1 font-label-sm text-label-sm rounded uppercase">
+                  SEOCHO MAIN ENTRANCE LANE
+                </div>
+</div>
+<p class="font-body-sm text-body-sm text-outline px-1">
+                ▲ 'WELCOME TO JBJ' 엔트런스 및 림 라인 조망
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE VALUES SECTION: Three Pillars -->
+<section class="py-16 md:py-24 bg-surface-container-high border-b border-outline-variant/30" id="about">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="max-w-2xl mb-14">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-widest block mb-1">OUR PHILOSOPHY</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">코트 위에서 배우는 삶의 기본</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3">
+            농구는 혼자 이길 수 없고, 실수 없이 끝낼 수 없는 운동입니다. JBJ는 기술을 주입하기 전에 다음의 세 가지 가치를 가슴에 새깁니다.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1 -->
+<div class="bg-surface p-8 rounded border-t-2 border-primary shadow-sm space-y-4">
+<span class="font-stat-lg text-stat-lg text-outline-variant/60 block">01</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">극복과 긍정</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              작은 도전에서 시작합니다. 넘어져도 다시 뛰는 극복과 긍정을 코트에서 배웁니다.
+            </p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface p-8 rounded border-t-2 border-secondary shadow-sm space-y-4">
+<span class="font-stat-lg text-stat-lg text-outline-variant/60 block">02</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">서로 믿는 협동</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              화려한 단독 드리블보다 동료에게 건네는 정확한 패스 하나를 더 귀하게 여깁니다. 서로 다른 속도를 존중하며 함께하는 마음을 나눕니다.
+            </p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface p-8 rounded border-t-2 border-primary shadow-sm space-y-4">
+<span class="font-stat-lg text-stat-lg text-outline-variant/60 block">03</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">함께하는 영향력</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              스포츠는 사회를 따뜻하게 잇는 다리입니다. 카X도네이션 캠핑데이와 통합농구대회처럼 농구로 이웃과 나누는 자리를 만듭니다.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- BRANCH OVERVIEW (서초본점 / 산본퍼스트센터점 / 용인노리터점) -->
+<section class="py-16 md:py-24 bg-surface border-b border-outline-variant/30" id="academies">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-widest block mb-1">CAMPUS DIRECTORY</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">지점별 농구교실 안내</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+            지점별 수업·운영 안내는 각 지점에서 확인해 주세요.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-surface-container-low border border-outline-variant/50 p-6 md:p-8 rounded hover:border-primary transition-all flex flex-col justify-between"><div class="space-y-3"><div class="flex justify-between items-start mb-2"><span class="px-2.5 py-1 bg-primary text-on-primary font-label-sm text-label-sm rounded uppercase font-bold">MAIN HQ</span><span class="font-label-caps text-label-caps text-secondary font-bold">SEOCHO</span></div><h3 class="font-headline-md text-headline-md text-on-surface font-bold">서초본점</h3><p class="font-body-sm text-body-sm text-outline">서울 서초구 사임당로 151 B1</p><div class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-3"><p class="text-primary font-semibold">운영시간</p><p class="">평일 14:00 ~ 23:00</p><p class="">주말 10:00 ~ 23:00</p></div><div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant pt-2"><p class="text-outline">[반별 시간·모집 연령·수강료 문의]</p></div></div><div class="pt-4 border-t border-outline-variant/30 mt-6 flex justify-between items-center"><a class="font-body-sm text-body-sm font-semibold text-primary hover:text-secondary" href="tel:050714747723">0507-1474-7723</a><a class="text-secondary hover:text-on-secondary-container font-label-caps text-label-caps font-bold" href="tel:050714747723">전화 문의 →</a></div></div><div class="bg-surface-container-low border border-outline-variant/50 p-6 md:p-8 rounded hover:border-primary transition-all flex flex-col justify-between"><div class="space-y-3"><div class="flex justify-between items-start mb-2"><span class="px-2.5 py-1 bg-surface-container-highest text-on-surface font-label-sm text-label-sm rounded uppercase font-bold border border-outline-variant">GUNPO</span><span class="font-label-caps text-label-caps text-secondary font-bold">SANBON FIRST</span></div><h3 class="font-headline-md text-headline-md text-on-surface font-bold">산본퍼스트센터점</h3><p class="font-body-sm text-body-sm text-outline">경기 군포시 산본로432번길 7</p><div class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-3"><p class="text-primary font-semibold">운영시간 &amp; 주차</p><p class="">13:00 ~ 22:00</p><p class="">무료 주차 가능</p></div><div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant pt-2"><p class="">수업 문의: <a class="text-primary font-semibold hover:underline" href="tel:050895952937">0508-9595-2937</a></p><p class="">대관 문의: <a class="text-primary font-semibold hover:underline" href="tel:0313953690">031-395-3690</a></p></div></div><div class="pt-4 border-t border-outline-variant/30 mt-6 flex justify-between items-center"><span class="font-body-sm text-body-sm font-semibold text-primary">0508-9595-2937</span><a class="text-secondary hover:text-on-secondary-container font-label-caps text-label-caps font-bold" href="tel:050895952937">수업 상담 →</a></div></div><div class="bg-surface-container-low border border-outline-variant/50 p-6 md:p-8 rounded hover:border-primary transition-all flex flex-col justify-between"><div class="space-y-3"><div class="flex justify-between items-start mb-2"><span class="px-2.5 py-1 bg-surface-container-highest text-on-surface font-label-sm text-label-sm rounded uppercase font-bold border border-outline-variant">YONGIN</span><span class="font-label-caps text-label-caps text-secondary font-bold">NORITER</span></div><h3 class="font-headline-md text-headline-md text-on-surface font-bold">용인노리터점</h3><p class="font-body-sm text-body-sm text-outline">주소: [확인 중]</p><div class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-3"><p class="text-primary font-semibold">운영 정보</p><p class="">운영시간: [확인 중]</p><p class="">연락처: [확인 중]</p></div><div class="space-y-1 font-body-sm text-body-sm text-outline pt-2"><p class="">세부 정보 확인 후 업데이트 예정입니다.</p></div></div><div class="pt-4 border-t border-outline-variant/30 mt-6 flex justify-between items-center"><span class="font-body-sm text-body-sm text-outline">[확인 중]</span><a class="text-secondary hover:text-on-secondary-container font-label-caps text-label-caps font-bold" href="#inquiry">본점 문의 →</a></div></div></div>
+</div>
+</section>
+<!-- ADAPTIVE TEAM DETAILED SPOTLIGHT (발달장애 농구팀: JBJ 블랙 / JBJ 골드) -->
+<section class="py-16 md:py-24 bg-primary-container text-on-primary border-b border-outline/20" id="adaptive">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center"><div class="lg:col-span-6 space-y-6"><div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest/10 border border-secondary-fixed-dim/40 rounded"><span class="w-2 h-2 rounded-full bg-secondary-fixed"></span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed font-bold">JBJ ATHLETICS</span></div><h2 class="font-headline-lg text-headline-lg font-bold text-on-primary break-keep">발달장애 농구팀<br>JBJ 블랙 &amp; JBJ 골드</h2><p class="font-body-lg text-body-lg text-primary-fixed-dim leading-relaxed">JBJ 블랙과 JBJ 골드는 2025년 제8회 JBJ 유소년 농구대회에 발달장애 청소년 농구단으로 참가했습니다. 두 팀을 같은 비중으로 소개합니다.</p><div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2"><div class="p-4 bg-surface-container-lowest/5 border border-outline/30 rounded"><span class="font-label-caps text-label-caps text-secondary-fixed font-bold block mb-1">JBJ 블랙</span><p class="font-body-sm text-body-sm text-on-primary-container">2025년 통합농구대회 참가 보도</p></div><div class="p-4 bg-surface-container-lowest/5 border border-outline/30 rounded"><span class="font-label-caps text-label-caps text-secondary-fixed font-bold block mb-1">JBJ 골드</span><p class="font-body-sm text-body-sm text-on-primary-container">2025년 통합농구대회 참가 보도</p></div><div class="p-4 bg-surface-container-lowest/5 border border-outline/30 rounded"><span class="font-label-caps text-label-caps text-outline font-bold block mb-1">[팀명 확인 중]</span><p class="font-body-sm text-body-sm text-outline">[세 번째 팀명 확인 중]</p></div></div><div class="pt-2"><blockquote class="border-l-2 border-secondary-fixed pl-4 font-body-md text-body-md italic text-primary-fixed-dim">함께 뛰는 순간, 서로를 존중하는 팀.</blockquote></div></div><div class="lg:col-span-6 bg-surface-container-lowest/5 p-8 rounded border border-outline/20 space-y-6"><h3 class="font-headline-sm text-headline-sm text-on-primary font-bold pb-4 border-b border-outline/20">공식 대회 및 활동</h3><div class="space-y-4"><div class="flex items-start gap-4 pb-4 border-b border-outline/10"><span class="font-label-caps text-label-caps text-secondary-fixed bg-surface-container-lowest/10 px-2.5 py-1 rounded">2025</span><div><h4 class="font-body-md text-body-md font-bold text-on-primary">2025 통합농구대회 참가</h4><p class="font-body-sm text-body-sm text-on-primary-container">2025년 제8회 JBJ 유소년 농구대회 참가</p></div></div><div class="p-3 bg-surface-container-lowest/5 rounded text-outline font-body-sm text-body-sm">[다음 대회·활동 일정 확인 중]</div></div><div class="p-4 bg-secondary-fixed/10 rounded border border-secondary-fixed/30 flex items-center justify-between"><div><span class="font-label-caps text-label-caps text-secondary-fixed uppercase font-bold block">PARTICIPATION INQUIRY</span><span class="font-body-sm text-body-sm text-on-primary">발달장애 농구팀 입단 및 참관 문의</span></div><a class="px-4 py-2 bg-secondary text-on-secondary font-label-caps text-label-caps rounded hover:bg-secondary-fixed-dim transition-colors" href="tel:050714747723">문의하기</a></div></div></div>
+</div>
+</section>
+<!-- ACTIVITIES & PHOTO GALLERY SECTION (Incorporating Available Assets: IMAGE_3, IMAGE_4, IMAGE_7) -->
+<section class="py-16 md:py-24 bg-surface border-b border-outline-variant/30" id="activities">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-widest block mb-1">MOMENTS OF GLORY</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">생생한 코트와 대회 현장</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            땀 흘리며 서로를 끌어안았던 대회와 캠프의 기록. 아이들의 환한 미소가 JBJ가 존재하는 이유입니다.
+          </p>
+</div>
+<!-- Bento Style Photo Grid with Exact Available Images -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Photo 1: IMAGE_3 (Aspect ratio preserved, faces uncropped) -->
+<div class="md:col-span-4 bg-surface-container-low border border-outline-variant/40 rounded overflow-hidden flex flex-col justify-between group">
+<div class="p-4">
+<span class="inline-block px-2 py-0.5 bg-surface-container font-label-sm text-label-sm text-secondary font-bold uppercase rounded mb-2">TOURNAMENT SNAP</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">농구 교류의 순간</h4>
+<p class="font-body-sm text-body-sm text-outline">기존 JBJ 홈페이지의 친선 교류 사진</p>
+</div>
+<div class="p-4 pt-0">
+<div class="overflow-hidden rounded border border-outline-variant/30 bg-surface">
+<img alt="기존 JBJ 홈페이지의 활동 사진" class="w-full h-auto object-contain mx-auto group-hover:scale-102 transition-transform duration-300" src="../assets/photo-02.jpg" loading="lazy" style="object-fit:contain;max-width:100%;background:#eee8d9">
+</div>
+</div>
+</div>
+<!-- Photo 2: IMAGE_4 (Aspect ratio preserved) -->
+<div class="md:col-span-4 bg-surface-container-low border border-outline-variant/40 rounded overflow-hidden flex flex-col justify-between group">
+<div class="p-4">
+<span class="inline-block px-2 py-0.5 bg-surface-container font-label-sm text-label-sm text-secondary font-bold uppercase rounded mb-2">VICTORY CELEBRATION</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">함께 남긴 기념 사진</h4>
+<p class="font-body-sm text-body-sm text-outline">기존 JBJ 홈페이지의 대회 기념 사진</p>
+</div>
+<div class="p-4 pt-0">
+<div class="overflow-hidden rounded border border-outline-variant/30 bg-surface">
+<img alt="기존 JBJ 홈페이지의 활동 사진" class="w-full h-auto object-contain mx-auto group-hover:scale-102 transition-transform duration-300" src="../assets/photo-04.jpg" loading="lazy" style="object-fit:contain;max-width:100%;background:#eee8d9">
+</div>
+</div>
+</div>
+<!-- Photo 3: IMAGE_7 (Aspect ratio preserved) -->
+<div class="md:col-span-4 bg-surface-container-low border border-outline-variant/40 rounded overflow-hidden flex flex-col justify-between group">
+<div class="p-4">
+<span class="inline-block px-2 py-0.5 bg-surface-container font-label-sm text-label-sm text-secondary font-bold uppercase rounded mb-2">COMMUNITY &amp; CAMP</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">카X도네이션 캠프데이</h4>
+<p class="font-body-sm text-body-sm text-outline">선수단과 학부모가 다 함께 어우러진 나눔 캠프</p>
+</div>
+<div class="p-4 pt-0">
+<div class="overflow-hidden rounded border border-outline-variant/30 bg-surface">
+<img alt="기존 JBJ 홈페이지의 활동 사진" class="w-full h-auto object-contain mx-auto group-hover:scale-102 transition-transform duration-300" src="../assets/photo-07.jpg" loading="lazy" style="object-fit:contain;max-width:100%;background:#eee8d9">
+</div>
+</div>
+</div>
+</div>
+<!-- Social Activity Flank -->
+<div class="mt-8 p-6 bg-surface-container border border-outline-variant/40 rounded flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">photo_camera</span>
+<div>
+<span class="font-body-md text-body-md font-bold text-on-surface">더 많은 활동 소식은 인스타그램에서 확인하세요</span>
+<span class="block font-body-sm text-body-sm text-outline">JBJ의 활동 소식을 만나보세요.</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-surface text-primary border border-outline-variant rounded font-label-caps text-label-caps hover:border-secondary transition-colors" href="https://instagram.com/jbj_basketball_club" rel="noopener noreferrer" target="_blank">
+<span class="">Instagram @jbj_basketball_club</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+<!-- INQUIRY & CONTACT SECTION (Explicit Phone & Instagram / No fake submission forms) -->
+<section class="py-16 md:py-24 bg-surface-container-high border-b border-outline-variant/30" id="inquiry">
+<div class="max-w-[1320px] mx-auto px-space-md md:px-margin">
+<div class="bg-primary text-on-primary rounded p-8 md:p-14 border border-outline/20 relative overflow-hidden">
+<!-- Court Motif Graphic -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full border border-on-primary/10 pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+<div class="lg:col-span-8 space-y-4">
+<span class="font-label-caps text-label-caps text-secondary-fixed uppercase font-bold tracking-widest block">DIRECT CONSULTATION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary font-bold">
+                아이의 첫 드리블, <br>
+                지금 JBJ에 문의하세요.
+              </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl">
+                수업과 팀 참여에 관해 궁금한 점을 전화 또는 공식 Instagram으로 문의해 주세요.
+              </p>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-4">
+<!-- Call CTA Card -->
+<a class="p-5 bg-surface-container-lowest text-primary rounded flex items-center justify-between hover:bg-secondary hover:text-on-secondary transition-all group" href="tel:050714747723"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary group-hover:text-on-secondary">call</span><div><span class="font-label-sm text-label-sm uppercase font-bold text-outline group-hover:text-on-secondary/80 block">서초본점 전화 상담 연결</span><span class="font-headline-sm text-headline-sm font-bold">0507-1474-7723</span></div></div><span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span></a>
+<!-- Instagram CTA Card -->
+<a class="p-5 bg-surface-container-lowest/10 border border-on-primary/20 text-on-primary rounded flex items-center justify-between hover:bg-surface-container-lowest/20 transition-all group" href="https://instagram.com/jbj_basketball_club" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">chat</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary-fixed-dim block">인스타그램 DM 상담</span>
+<span class="font-body-md text-body-md font-bold">@jbj_basketball_club</span>
+</div>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Component Exact Implementation) -->
+<footer class="bg-primary-container dark:bg-surface-container-lowest text-on-primary dark:text-on-surface border-t border-outline/20">
+<div class="w-full px-space-md md:px-margin py-space-xl max-w-[1320px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-outline/20">
+<!-- Footer Logo -->
+<div>
+<span class="font-display-hero-mobile text-headline-sm font-bold text-on-primary dark:text-primary tracking-tight block">
+            JBJ BASKETBALL CLUB
+          </span>
+<span class="font-body-sm text-body-sm text-on-primary-container dark:text-on-surface-variant mt-1 block">
+            극복과 긍정, 농구로 전하는 가능성.
+          </span>
+</div>
+<!-- Footer Links from JSON -->
+<nav class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="font-label-caps text-label-caps text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-150" href="tel:050714747723">
+            전화 문의
+          </a>
+<a class="font-label-caps text-label-caps text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-150" href="https://instagram.com/jbj_basketball_club" rel="noopener noreferrer" target="_blank">
+            Instagram @jbj_basketball_club
+          </a>
+<a class="font-label-caps text-label-caps text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-150" href="home.html#academies">
+            지점 안내
+          </a>
+<a class="font-label-caps text-label-caps text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-150" href="home.html">
+            오시는 길
+          </a>
+<a class="font-label-caps text-label-caps text-on-primary-container dark:text-on-surface-variant hover:text-on-primary dark:hover:text-on-surface hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-150" href="home.html">
+            개인정보처리방침
+          </a>
+</nav>
+</div>
+<!-- Footer Bottom Legal Text -->
+<div class="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+<p class="font-body-sm text-body-sm text-on-primary-container dark:text-on-surface-variant">
+          공개 미리보기 · JBJ 승인 전 디자인 시안 | JBJ BASKETBALL CLUB. ALL RIGHTS RESERVED.
+        </p>
+<span class="font-label-sm text-label-sm text-outline-variant/60 uppercase">
+          COURT DISCIPLINE &amp; RESPECT
+        </span>
+</div>
+</div>
+</footer>
+
+
+</body></html>
