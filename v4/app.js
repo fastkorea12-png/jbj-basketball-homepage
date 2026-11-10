@@ -25,3 +25,6 @@ f.addEventListener('submit',e=>{e.preventDefault();
   f.hidden=true;done.hidden=false;done.focus();
 });
 }
+
+const mb=document.querySelector('.mbar');
+if(mb){const tick=()=>mb.classList.toggle('show',window.scrollY>420);addEventListener('scroll',tick,{passive:true});tick()}
