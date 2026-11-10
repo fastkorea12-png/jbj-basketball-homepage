@@ -328,6 +328,27 @@ nav.gnb a.ext{color:#aaa;margin-left:auto;font-size:14px}
 .gcard img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .gcard figcaption{font-size:13px;padding:10px 12px;color:#444}
 
+/* scoreboard (KBL 경기 카드 대응) */
+.sample-note{display:flex;gap:10px;align-items:center;font-size:13px;color:#5C4A1E;background:var(--gold-soft);border:1px dashed #cbb37a;border-radius:10px;padding:10px 14px;margin-bottom:12px}
+.sample-note b{background:var(--gold-deep);color:#fff;border-radius:4px;padding:1px 8px;font-size:12px;flex:none}
+.games-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.game{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px}
+.g-top{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.g-top .age{font-family:var(--disp);font-weight:800;font-size:13px;color:#111;background:var(--gold);border-radius:4px;padding:0 6px}
+.g-top .g-cup{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.g-top .ex{font-style:normal;margin-left:auto;font-size:10px;font-weight:800;background:#ECEAE4;color:#55524C;border-radius:4px;padding:1px 6px;flex:none}
+.g-row{display:grid;grid-template-columns:26px 1fr auto;align-items:center;gap:10px;color:var(--muted)}
+.g-row .nm{font-weight:600;font-size:15px}
+.g-row .pts{font-family:var(--disp);font-size:30px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.g-row.win{color:var(--ink)}
+.g-row.win .nm{font-weight:800}
+.g-row.win .pts{color:var(--ink);font-weight:800}
+.tm-mark{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#ECEAE4;color:#55524C;font-size:12px;font-weight:800;font-family:var(--disp)}
+.tm-mark.jbj{background:var(--black);color:var(--gold)}
+.g-foot{display:flex;justify-content:space-between;border-top:1px solid #f0ede6;padding-top:8px;font-size:12px;color:var(--muted)}
+.g-foot .res{font-weight:800}
+.g-foot .res.w{color:var(--gold-deep)}
+
 /* responsive */
 @media (max-width:1080px){
   .grid{grid-template-columns:minmax(0,1fr)}
@@ -356,6 +377,8 @@ nav.gnb a.ext{color:#aaa;margin-left:auto;font-size:14px}
   .page-hero h1{font-size:30px}
   .cta-band{flex-direction:column;align-items:flex-start}
   .branches{grid-template-columns:1fr}
+  .games-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:80%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}
+  .game{scroll-snap-align:start}
   .ceo-grid{grid-template-columns:1fr}
   .page .rent{grid-template-columns:1fr}
   nav.gnb a.ext{margin-left:0}
