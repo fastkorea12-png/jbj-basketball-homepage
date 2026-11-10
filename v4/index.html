@@ -3,20 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#141414">
 <title>JBJ 농구교실 — v4 가안</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap">
 <style>
 :root{
-  --black:#141414; --ink:#191919; --char:#232323; --line:#E6E2D8; --muted:#767676; --sub:#999;
+  --black:#141414; --ink:#191919; --char:#232323; --line:#E6E2D8; --muted:#66635C; --sub:#6B675F;
   --bg:#F7F5F0; --card:#fff;
   --gold:#C9A75A; --gold-deep:#806324; --gold-soft:#F3EBD6;
   --r:14px; --w:1240px;
+  --disp:"Barlow Condensed",Pretendard,"Arial Narrow",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Pretendard,-apple-system,system-ui,"Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;word-break:keep-all}
 a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
+a,button{touch-action:manipulation}
+[id]{scroll-margin-top:100px}
+h1,h2,h3{text-wrap:balance}
+.btn,.more,.tabs button,.sc,.tm .go,.cta-card a,nav.gnb a{transition:color .18s,background-color .18s,border-color .18s,transform .18s}
+img{display:block;max-width:100%;height:auto}
 .wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
 .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--gold);color:#000;padding:8px 12px;z-index:99}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -36,6 +46,9 @@ nav.gnb a:hover{color:#fff;border-color:var(--gold)}
 .hd-cta{display:flex;gap:8px}
 .btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:6px;font-size:13px;font-weight:700;border:1px solid #444;color:#eee}
 .btn.gold{background:var(--gold);border-color:var(--gold);color:#000}
+.btn:hover{border-color:var(--gold);color:#fff}
+.btn.gold:hover{background:#DDBE74;border-color:#DDBE74;color:#000}
+.mvp-body .btn:hover{background:#000;color:var(--gold)}
 .menu{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:24px;width:44px;height:44px}
 
 /* schedule strip (KBL 경기일정 대응) */
@@ -44,6 +57,7 @@ nav.gnb a:hover{color:#fff;border-color:var(--gold)}
 .sched-hd h2{font-size:15px;font-weight:700;color:var(--gold);letter-spacing:.02em}
 .sched-hd span{font-size:12px;color:#888}
 .sched-row{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:12px}
+.sc.result:hover{border-color:var(--gold);transform:translateY(-2px)}
 .sc.result{background:linear-gradient(140deg,#2a2416,#1d1d1d);border-color:#5a4a24}
 .sc .score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;text-align:center}
 .sc .score span{font-size:12px;color:#bbb}
@@ -68,7 +82,9 @@ main{padding:36px 0 60px}
 .sec-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
 .sec-hd h2{font-size:22px;font-weight:800;letter-spacing:-.02em}
 .sec-hd h2 small{font-size:12px;font-weight:700;color:var(--gold-deep);margin-left:8px;letter-spacing:.08em}
-.more{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.more{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:4px 0}
+a.more:hover{color:var(--ink)}
+a.more:hover::after{border-color:var(--ink)}
 .more::after{content:"→";display:grid;place-items:center;width:20px;height:20px;border:1px solid #bbb;border-radius:50%;font-size:11px}
 
 /* hero banner */
@@ -81,11 +97,9 @@ main{padding:36px 0 60px}
 .hero-txt p{color:#bbb;font-size:15px}
 .hero-txt .acts{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
 .hero-txt .acts .btn{height:42px;padding:0 18px;font-size:14px}
-.hero-img{position:relative;background:#0c0c0c;display:grid;place-items:center;padding:20px}
+.hero-img{position:relative;background:#0c0c0c;display:grid;align-content:center;justify-items:center;padding:20px}
 .hero-img img{width:100%;max-width:640px;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
-.hero-img figcaption{position:absolute;left:32px;bottom:30px;font-size:12px;background:rgba(0,0,0,.6);padding:4px 10px;border-radius:20px;color:#ddd}
-.dots{position:absolute;left:36px;bottom:24px;display:flex;gap:6px}
-.dots i{width:6px;height:6px;border-radius:50%;background:#555}.dots i:first-child{width:18px;border-radius:3px;background:var(--gold)}
+.hero-img figcaption{justify-self:start;margin-top:10px;font-size:12px;background:rgba(0,0,0,.6);padding:4px 10px;border-radius:20px;color:#ddd}
 
 /* philosophy cards (KBL 시즌리더 대응) */
 .phil{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -94,8 +108,7 @@ main{padding:36px 0 60px}
 .pc:nth-child(1) .pc-top{background:var(--black)}
 .pc:nth-child(2) .pc-top{background:linear-gradient(135deg,#9a7a35,#C9A75A);color:#111}
 .pc:nth-child(3) .pc-top{background:#2c2618}
-.pc-top .no{font-size:13px;font-weight:800;opacity:.75}
-.pc-top h3{font-size:24px;font-weight:800;margin-top:6px;letter-spacing:-.02em}
+.pc-top h3{font-size:24px;font-weight:800;letter-spacing:-.02em}
 .pc-top .big{position:absolute;right:-6px;bottom:-26px;font-size:110px;font-weight:900;opacity:.12;letter-spacing:-.06em;line-height:1}
 .pc ul{list-style:none;padding:8px 20px 14px}
 .pc li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f0ede6;font-size:14px}
@@ -104,7 +117,7 @@ main{padding:36px 0 60px}
 
 /* motto */
 .motto{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:6px 18px;background:var(--black);color:#fff;border-radius:var(--r);padding:22px 26px;margin-bottom:14px}
-.motto .x{font-size:22px;font-weight:800;color:#666;text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:3px}
+.motto .x{font-size:22px;font-weight:800;color:#8E8B84;text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:3px}
 .motto .arrow{color:var(--gold);font-size:22px}
 .motto strong{font-size:34px;font-weight:900;color:var(--gold);letter-spacing:-.02em}
 .motto p{grid-column:1/-1;color:#bbb;font-size:14px}
@@ -114,6 +127,7 @@ main{padding:36px 0 60px}
 .sample-note b{background:var(--gold-deep);color:#fff;border-radius:4px;padding:1px 8px;font-size:12px;flex:none}
 .tabs{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto}
 .tabs button{font:inherit;font-size:14px;font-weight:700;height:38px;padding:0 16px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:#555;cursor:pointer;flex:none}
+.tabs button:hover{border-color:var(--ink);color:var(--ink)}
 .tabs button[aria-selected=true]{background:var(--black);color:var(--gold);border-color:var(--black)}
 .rec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .rec-sum{display:grid;grid-template-columns:repeat(5,1fr);background:var(--black);color:#fff;text-align:center}
@@ -130,13 +144,13 @@ main{padding:36px 0 60px}
 .games .vs b{font-weight:900;color:var(--gold-deep);font-size:16px}
 .games i{font-style:normal;font-size:12px;font-weight:800;text-align:center;border-radius:4px;padding:3px 0}
 .games i.W{background:var(--black);color:var(--gold)}
-.games i.L{background:#eee;color:#888}
+.games i.L{background:#ECEAE4;color:#55524C}
 .rec-foot{margin-top:10px;font-size:13.5px;color:#555}
 .rec-foot b{color:var(--gold-deep)}
 
 /* program */
 .prog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.pg{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.pg{border-top:3px solid var(--ink);padding:16px 2px 4px}
 .pg .age{font-size:34px;font-weight:900;letter-spacing:-.03em}
 .pg .age small{font-size:14px;color:var(--muted);font-weight:600;margin-left:4px}
 .pg p{font-size:14px;color:#555;margin-top:6px}
@@ -155,7 +169,9 @@ main{padding:36px 0 60px}
 .tm .k{font-size:12px;font-weight:700;letter-spacing:.14em;opacity:.7}
 .tm h3{font-size:26px;font-weight:900;letter-spacing:-.02em}
 .tm p{font-size:13.5px;opacity:.85;margin-top:auto}
-.tm .go{font-size:13px;font-weight:700}
+.tm .go{font-size:13px;font-weight:700;align-self:flex-start;padding:4px 0;border-bottom:1px solid transparent}
+.tm .go:hover{border-color:currentColor}
+.cta-card a:hover{color:#fff}
 .team-note{margin-top:14px;font-size:14px;color:#555;background:var(--card);border-left:3px solid var(--gold);padding:14px 16px;border-radius:0 10px 10px 0}
 
 /* events / photo (KBL PHOTO 대응) */
@@ -165,8 +181,8 @@ main{padding:36px 0 60px}
 .ph-card .cap{position:absolute;inset:auto 0 0 0;padding:40px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff}
 .ph-card .cap b{display:block;font-size:12px;color:var(--gold);font-weight:700}
 .ph-card .cap span{font-size:14px;font-weight:600;line-height:1.35}
-.ev{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.evc{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;align-items:center}
+.ev{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px;border-top:2px solid var(--ink)}
+.evc{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
 .evc img{width:120px;height:120px;object-fit:cover;border-radius:10px}
 .evc .d{font-size:12px;font-weight:800;color:var(--gold-deep);letter-spacing:.04em}
 .evc h3{font-size:17px;font-weight:800;margin:2px 0 4px}
@@ -218,8 +234,20 @@ footer{background:var(--black);color:#999;font-size:13px;padding:40px 0 48px}
 .ft{display:grid;grid-template-columns:1fr auto;gap:24px}
 footer .logo{margin-bottom:14px}
 footer p{line-height:1.8}
-footer .draft{margin-top:16px;color:#666;font-size:12px}
+footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
 .ft-links{display:flex;gap:18px;font-weight:600;color:#ccc}
+
+/* numbers & display face */
+.sc .score b,.rec-sum b,.games,.mvp-stats b,.mvp-top .num,.pg .age,.evc .d{font-variant-numeric:tabular-nums}
+.sc .score b,.rec-sum b,.games .vs b,.games .dt,.pg .age,.motto strong,.motto .x,.mvp-top .num,.mvp-stats b,.sc .lv em,.pc-top .big,.hero-txt h1 span,.tabs button,.tm h3{font-family:var(--disp)}
+.sc .score b{font-size:36px;font-weight:800}
+.rec-sum b{font-size:32px;font-weight:800}
+.games .vs b{font-size:19px}
+.pg .age{font-size:42px;font-weight:800;letter-spacing:0}
+.motto strong{font-size:42px;letter-spacing:.01em}
+.hero-txt h1 span{font-size:1.18em;font-weight:800;letter-spacing:0}
+.mvp-top .num{font-size:118px;letter-spacing:-.02em}
+.tabs button{font-size:16px;letter-spacing:.02em}
 
 /* responsive */
 @media (max-width:1080px){
@@ -240,7 +268,6 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
   .hero-txt{padding:30px 22px 44px}
   .hero-txt h1{font-size:30px}
   .hero-img{padding:0 16px 16px}
-  .hero-img figcaption{left:28px;bottom:28px}
   .phil,.prog,.teams{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}
   .phil>*,.prog>*,.teams>*{scroll-snap-align:start}
   .strip{grid-auto-columns:46%}
@@ -263,7 +290,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
   .games i{grid-column:3;grid-row:1}
   .strip{grid-auto-columns:62%}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.sc.result:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -333,15 +360,14 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
         <div class="hero-txt">
           <img class="hero-logo" src="../assets/jbj-logo.png" alt="JBJ Basketball Club 로고" width="106" height="86">
           <h1>Best One이 아닌,<br><span>Only One.</span></h1>
-          <p>안녕하세요. JBJ 농구교실입니다!<br>누군가보다 나은 한 명이 아니라, 하나뿐인 나로 코트에 섭니다.</p>
+          <p>안녕하세요. JBJ 농구교실입니다!<br>등수보다 나다운 플레이를 먼저 배웁니다.</p>
           <div class="acts">
             <a class="btn gold" href="#program">수업 알아보기</a>
             <a class="btn" href="#teams">발달장애 농구팀</a>
           </div>
-          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
         <figure class="hero-img">
-          <img src="../assets/photo-16.jpg" alt="JBJ 체육관 코트 전경">
+          <img src="../assets/photo-16.jpg" alt="JBJ 체육관 코트 전경" width="640" height="480" fetchpriority="high">
           <figcaption>서초본점 JBJ BASKETBALL CENTER</figcaption>
         </figure>
       </section>
@@ -351,12 +377,12 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
         <div class="sec-hd"><h2 id="rec-t">경기 전적<small>RECORD</small></h2><a class="more" href="#events">대회 안내</a></div>
         <p class="sample-note"><b>예시</b>아래 숫자와 상대팀은 화면 구성을 보여주기 위한 예시입니다. 실제 대회 기록으로 교체합니다.</p>
         <div class="tabs" role="tablist" aria-label="연령별 전적">
-          <button role="tab" aria-selected="true" data-t="u10">U10</button>
-          <button role="tab" aria-selected="false" data-t="u13">U13</button>
-          <button role="tab" aria-selected="false" data-t="u16">U16</button>
-          <button role="tab" aria-selected="false" data-t="team">블랙·골드</button>
+          <button role="tab" id="tab-u10" aria-selected="true" aria-controls="panel-u10" tabindex="0" data-t="u10">U10</button>
+          <button role="tab" id="tab-u13" aria-selected="false" aria-controls="panel-u13" tabindex="-1" data-t="u13">U13</button>
+          <button role="tab" id="tab-u16" aria-selected="false" aria-controls="panel-u16" tabindex="-1" data-t="u16">U16</button>
+          <button role="tab" id="tab-team" aria-selected="false" aria-controls="panel-team" tabindex="-1" data-t="team">블랙·골드</button>
         </div>
-        <div class="rec" data-p="u10">
+        <div class="rec" role="tabpanel" id="panel-u10" aria-labelledby="tab-u10" tabindex="0" data-p="u10">
           <div class="rec-sum"><div><small>경기</small><b>12</b></div><div><small>승</small><b class="w">8</b></div><div><small>패</small><b>4</b></div><div><small>승률</small><b>0.667</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
           <ol class="games">
             <li><span class="dt">10.25</span><span class="cup">OO구청장배 유소년대회</span><span class="vs">JBJ <b>34</b> : 28 상대팀 A</span><i class="W">승</i></li>
@@ -364,7 +390,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
             <li><span class="dt">09.13</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>26</b> : 20 상대팀 C</span><i class="W">승</i></li>
           </ol>
         </div>
-        <div class="rec" data-p="u13" hidden>
+        <div class="rec" role="tabpanel" id="panel-u13" aria-labelledby="tab-u13" tabindex="0" data-p="u13" hidden>
           <div class="rec-sum"><div><small>경기</small><b>10</b></div><div><small>승</small><b class="w">6</b></div><div><small>패</small><b>4</b></div><div><small>승률</small><b>0.600</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
           <ol class="games">
             <li><span class="dt">10.26</span><span class="cup">OO협회장배 대회</span><span class="vs">JBJ <b>41</b> : 37 상대팀 D</span><i class="W">승</i></li>
@@ -372,7 +398,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
             <li><span class="dt">09.13</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>33</b> : 31 상대팀 F</span><i class="W">승</i></li>
           </ol>
         </div>
-        <div class="rec" data-p="u16" hidden>
+        <div class="rec" role="tabpanel" id="panel-u16" aria-labelledby="tab-u16" tabindex="0" data-p="u16" hidden>
           <div class="rec-sum"><div><small>경기</small><b>8</b></div><div><small>승</small><b class="w">5</b></div><div><small>패</small><b>3</b></div><div><small>승률</small><b>0.625</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
           <ol class="games">
             <li><span class="dt">11.01</span><span class="cup">OO시장배 대회</span><span class="vs">JBJ <b>52</b> : 47 상대팀 G</span><i class="W">승</i></li>
@@ -380,7 +406,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
             <li><span class="dt">09.20</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>45</b> : 39 상대팀 I</span><i class="W">승</i></li>
           </ol>
         </div>
-        <div class="rec" data-p="team" hidden>
+        <div class="rec" role="tabpanel" id="panel-team" aria-labelledby="tab-team" tabindex="0" data-p="team" hidden>
           <div class="rec-sum"><div><small>경기</small><b>6</b></div><div><small>승</small><b class="w">3</b></div><div><small>패</small><b>3</b></div><div><small>승률</small><b>0.500</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
           <ol class="games">
             <li><span class="dt">08.15</span><span class="cup">JBJ 유소년 농구대회 (통합)</span><span class="vs">JBJ 블랙 <b>18</b> : 14 상대팀 J</span><i class="W">승</i></li>
@@ -388,25 +414,25 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
             <li><span class="dt">06.07</span><span class="cup">통합 농구 교류전</span><span class="vs">JBJ 블랙 <b>20</b> : 15 JBJ 골드</span><i class="W">승</i></li>
           </ol>
         </div>
-        <p class="rec-foot">승패는 기록하되, JBJ는 <b>모든 아이가 코트에 서는 것</b>을 더 중요한 기록으로 봅니다.</p>
+        <p class="rec-foot">승패도 기록합니다. JBJ가 가장 먼저 보는 기록은 <b>모든 아이가 코트에 서는 것</b>입니다.</p>
       </section>
 
 
       <!-- 철학: KBL '시즌 리더' 3단 카드 -->
       <section id="story" aria-labelledby="phil-t">
         <div class="sec-hd"><h2 id="phil-t">JBJ가 가르치는 것<small>PHILOSOPHY</small></h2><a class="more" href="#story">JBJ 이야기</a></div>
-        <div class="motto"><span class="x">BEST ONE</span><span class="arrow">→</span><strong>ONLY ONE</strong><p>1등 한 명을 가려내는 농구가 아니라, 아이 한 명 한 명이 자기만의 자리를 찾는 농구.</p></div>
+        <div class="motto"><span class="x">BEST ONE</span><span class="arrow">→</span><strong>ONLY ONE</strong><p>아이마다 코트 위에서 자기 자리를 찾도록 가르칩니다.</p></div>
         <div class="phil">
           <article class="pc">
-            <div class="pc-top"><span class="no">01</span><h3>극복과 긍정</h3><span class="big">UP</span></div>
+            <div class="pc-top"><h3>극복과 긍정</h3><span class="big">UP</span></div>
             <ul><li><b>·</b>넘어져도 다시 도전하는 마음</li><li><b>·</b>작은 키보다 큰 태도</li><li><b>·</b>실수를 배움으로 바꾸는 연습</li></ul>
           </article>
           <article class="pc">
-            <div class="pc-top"><span class="no">02</span><h3>서로 믿는 협동</h3><span class="big">PASS</span></div>
+            <div class="pc-top"><h3>서로 믿는 협동</h3><span class="big">PASS</span></div>
             <ul><li><b>·</b>위치를 바꾸며 믿고 주는 패스</li><li><b>·</b>함께 이기고 함께 배우기</li><li><b>·</b>비장애·발달장애 선수가 한 코트에서</li></ul>
           </article>
           <article class="pc">
-            <div class="pc-top"><span class="no">03</span><h3>좋은 영향력</h3><span class="big">GIVE</span></div>
+            <div class="pc-top"><h3>좋은 영향력</h3><span class="big">GIVE</span></div>
             <ul><li><b>·</b>농구로 복음과 사랑을 전하기</li><li><b>·</b>순위 없는 크리스마스 대회</li><li><b>·</b>가정 밖 청소년을 돕는 나눔</li></ul>
           </article>
         </div>
@@ -442,10 +468,10 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
       <section id="events" aria-labelledby="ev-t">
         <div class="sec-hd"><h2 id="ev-t">대회·행사<small>EVENTS</small></h2><a class="more" href="#gallery">지난 사진</a></div>
         <div class="ev">
-          <article class="evc"><img src="../assets/photo-10.jpg" alt="유소년 농구대회 시상 기념 사진"><div><span class="d">매년 8.15 무렵</span><h3>JBJ 유소년 농구대회</h3><p>"대한농구만세". 2025 제8회는 서울YMCA체육관에서 '대한통합농구만세'로.</p></div></article>
-          <article class="evc"><img src="../assets/photo-09.jpg" alt="크리스마스 농구대회 기념 사진"><div><span class="d">매년 12.25</span><h3>크리스마스 농구대회</h3><p>순위 없이 모두에게 선물. 2025 제8회 20팀, "어메이징 그레이스".</p></div></article>
-          <article class="evc"><img src="../assets/photo-07.jpg" alt="카X도네이션 캠핑데이 기념 사진"><div><span class="d">매년 5월</span><h3>카X도네이션 캠핑데이</h3><p>농구하고 나누는 하루. 기부금은 가정 밖 청소년에게.</p></div></article>
-          <article class="evc"><img src="../assets/photo-02.jpg" alt="친선 농구 교류 현장"><div><span class="d">교류전</span><h3>서울YMCA 바스켓타임</h3><p>2020 업무협약 이후 YMCA 유소년농구단과 함께해요.</p></div></article>
+          <article class="evc"><img src="../assets/photo-10.jpg" alt="유소년 농구대회 시상 기념 사진" width="590" height="480" loading="lazy" decoding="async"><div><span class="d">매년 8.15 무렵</span><h3>JBJ 유소년 농구대회</h3><p>“대한농구만세”. 2025 제8회는 서울YMCA체육관에서 '대한통합농구만세'로.</p></div></article>
+          <article class="evc"><img src="../assets/photo-09.jpg" alt="크리스마스 농구대회 기념 사진" width="292" height="302" loading="lazy" decoding="async"><div><span class="d">매년 12.25</span><h3>크리스마스 농구대회</h3><p>순위 없이 모두에게 선물. 2025 제8회 20팀, “어메이징 그레이스”.</p></div></article>
+          <article class="evc"><img src="../assets/photo-07.jpg" alt="카X도네이션 캠핑데이 기념 사진" width="412" height="426" loading="lazy" decoding="async"><div><span class="d">매년 5월</span><h3>카X도네이션 캠핑데이</h3><p>농구하고 나누는 하루. 기부금은 가정 밖 청소년에게.</p></div></article>
+          <article class="evc"><img src="../assets/photo-02.jpg" alt="친선 농구 교류 현장" width="292" height="302" loading="lazy" decoding="async"><div><span class="d">교류전</span><h3>서울YMCA 바스켓타임</h3><p>2020 업무협약 이후 YMCA 유소년농구단과 함께해요.</p></div></article>
         </div>
       </section>
 
@@ -453,12 +479,12 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
       <section id="gallery" aria-labelledby="gal-t">
         <div class="sec-hd"><h2 id="gal-t">PHOTO</h2><a class="more" href="https://www.instagram.com/jbj_basketball_club/" target="_blank" rel="noopener">Instagram</a></div>
         <div class="strip" tabindex="0" aria-label="사진 목록, 옆으로 넘겨 보기">
-          <figure class="ph-card"><img src="../assets/photo-03.jpg" alt=""><figcaption class="cap"><b>크리스마스 대회</b><span>함께 받은 선물, 함께 찍은 사진</span></figcaption></figure>
-          <figure class="ph-card"><img src="../assets/photo-05.jpg" alt=""><figcaption class="cap"><b>유소년 농구대회</b><span>대회 기념 사진</span></figcaption></figure>
-          <figure class="ph-card"><img src="../assets/photo-08.jpg" alt=""><figcaption class="cap"><b>카X도네이션</b><span>나눔에 함께한 참가자들</span></figcaption></figure>
-          <figure class="ph-card"><img src="../assets/photo-13.jpg" alt=""><figcaption class="cap"><b>서초본점</b><span>JBJ 로고 벽면</span></figcaption></figure>
-          <figure class="ph-card"><img src="../assets/photo-11.jpg" alt=""><figcaption class="cap"><b>유소년 농구대회</b><span>참가팀 기념 사진</span></figcaption></figure>
-          <figure class="ph-card"><img src="../assets/photo-04.jpg" alt=""><figcaption class="cap"><b>JBJ 행사</b><span>참가자 단체 사진</span></figcaption></figure>
+          <figure class="ph-card"><img src="../assets/photo-03.jpg" alt="" width="290" height="300" loading="lazy" decoding="async"><figcaption class="cap"><b>크리스마스 대회</b><span>함께 받은 선물, 함께 찍은 사진</span></figcaption></figure>
+          <figure class="ph-card"><img src="../assets/photo-05.jpg" alt="" width="400" height="414" loading="lazy" decoding="async"><figcaption class="cap"><b>유소년 농구대회</b><span>대회 기념 사진</span></figcaption></figure>
+          <figure class="ph-card"><img src="../assets/photo-08.jpg" alt="" width="433" height="447" loading="lazy" decoding="async"><figcaption class="cap"><b>카X도네이션</b><span>나눔에 함께한 참가자들</span></figcaption></figure>
+          <figure class="ph-card"><img src="../assets/photo-13.jpg" alt="" width="465" height="480" loading="lazy" decoding="async"><figcaption class="cap"><b>서초본점</b><span>JBJ 로고 벽면</span></figcaption></figure>
+          <figure class="ph-card"><img src="../assets/photo-11.jpg" alt="" width="508" height="413" loading="lazy" decoding="async"><figcaption class="cap"><b>유소년 농구대회</b><span>참가팀 기념 사진</span></figcaption></figure>
+          <figure class="ph-card"><img src="../assets/photo-04.jpg" alt="" width="344" height="355" loading="lazy" decoding="async"><figcaption class="cap"><b>JBJ 행사</b><span>참가자 단체 사진</span></figcaption></figure>
         </div>
       </section>
 
@@ -504,7 +530,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
       <section id="rent" aria-labelledby="rent-t">
         <div class="sec-hd"><h2 id="rent-t">코트 대관</h2></div>
         <div class="rent">
-          <img src="../assets/photo-14.jpg" alt="JBJ 농구코트와 골대">
+          <img src="../assets/photo-14.jpg" alt="JBJ 농구코트와 골대" width="465" height="480" loading="lazy" decoding="async">
           <div><b>서초본점 풀코트</b><span>22 × 14 × 8m · 대관료 <span class="ph">[확인]</span></span><b style="margin-top:8px">산본퍼스트센터점</b><span>2시간 13만원~ · <a class="tel" href="tel:0313953690">031-395-3690</a></span></div>
         </div>
       </section>
@@ -530,7 +556,8 @@ m.addEventListener('click',()=>set(!g.classList.contains('open')));
 g.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
 const tabs=document.querySelectorAll('.tabs [role=tab]');
-tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t));document.querySelectorAll('.rec').forEach(p=>p.hidden=p.dataset.p!==t.dataset.t)}));
+const pick=(t,focus)=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1});document.querySelectorAll('.rec').forEach(p=>p.hidden=p.dataset.p!==t.dataset.t);if(focus)t.focus()};
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>pick(t));t.addEventListener('keydown',e=>{const n=tabs.length;let j=null;if(e.key==='ArrowRight')j=(i+1)%n;else if(e.key==='ArrowLeft')j=(i-1+n)%n;else if(e.key==='Home')j=0;else if(e.key==='End')j=n-1;if(j!==null){e.preventDefault();pick(tabs[j],true)}})});
 </script>
 </body>
 </html>
