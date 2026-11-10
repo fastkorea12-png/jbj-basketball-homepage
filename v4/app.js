@@ -1,7 +1,8 @@
-const m=document.querySelector('.menu'),g=document.getElementById('gnb');
-const set=o=>{g.classList.toggle('open',o);m.setAttribute('aria-expanded',o);m.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기');m.textContent=o?'✕':'☰'};
-m.addEventListener('click',()=>set(!g.classList.contains('open')));
+const g=document.getElementById('gnb'),ms=document.querySelectorAll('.menu');
+const set=o=>{g.classList.toggle('open',o);document.body.classList.toggle('sheet-open',o);ms.forEach(m=>m.setAttribute('aria-expanded',o))};
+ms.forEach(m=>m.addEventListener('click',e=>{e.stopPropagation();set(!g.classList.contains('open'))}));
 g.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+document.addEventListener('click',e=>{if(g.classList.contains('open')&&!g.contains(e.target))set(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
 const f=document.getElementById('cform');
 if(f){
@@ -25,6 +26,3 @@ f.addEventListener('submit',e=>{e.preventDefault();
   f.hidden=true;done.hidden=false;done.focus();
 });
 }
-
-const mb=document.querySelector('.mbar');
-if(mb){const tick=()=>mb.classList.toggle('show',window.scrollY>420);addEventListener('scroll',tick,{passive:true});tick()}
