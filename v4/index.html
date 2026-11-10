@@ -27,7 +27,7 @@ img{display:block;max-width:100%}
 header{position:sticky;top:0;z-index:50;background:var(--black);border-bottom:1px solid #2b2b2b}
 .hd{display:flex;align-items:center;height:68px;gap:36px}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:-.02em}
-.logo b{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#000;font-size:13px;letter-spacing:0}
+.logo-img{height:43px;width:auto}
 .logo small{display:block;font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.14em}
 nav.gnb{display:flex;gap:28px;flex:1}
 nav.gnb a{color:#ddd;font-size:15px;font-weight:600;padding:22px 0;border-bottom:2px solid transparent}
@@ -66,6 +66,7 @@ main{padding:36px 0 60px}
 /* hero banner */
 .hero{display:grid;grid-template-columns:1.05fr 1fr;border-radius:var(--r);overflow:hidden;background:var(--black);color:#fff;min-height:380px}
 .hero-txt{padding:40px 36px;display:flex;flex-direction:column;justify-content:center;gap:16px;position:relative}
+.hero-logo{width:106px;height:auto}
 .hero-txt .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:700}
 .hero-txt h1{font-size:40px;line-height:1.2;font-weight:800;letter-spacing:-.03em}
 .hero-txt h1 span{color:var(--gold)}
@@ -92,6 +93,38 @@ main{padding:36px 0 60px}
 .pc li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f0ede6;font-size:14px}
 .pc li:last-child{border:0}
 .pc li b{color:var(--gold-deep);font-size:13px;min-width:16px}
+
+/* motto */
+.motto{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:6px 18px;background:var(--black);color:#fff;border-radius:var(--r);padding:22px 26px;margin-bottom:14px}
+.motto .x{font-size:22px;font-weight:800;color:#666;text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:3px}
+.motto .arrow{color:var(--gold);font-size:22px}
+.motto strong{font-size:34px;font-weight:900;color:var(--gold);letter-spacing:-.02em}
+.motto p{grid-column:1/-1;color:#bbb;font-size:14px}
+
+/* record */
+.sample-note{display:flex;gap:10px;align-items:center;font-size:13px;color:#6b5a2e;background:var(--gold-soft);border:1px dashed #cbb37a;border-radius:10px;padding:10px 14px;margin-bottom:12px}
+.sample-note b{background:var(--gold-deep);color:#fff;border-radius:4px;padding:1px 8px;font-size:12px;flex:none}
+.tabs{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto}
+.tabs button{font:inherit;font-size:14px;font-weight:700;height:38px;padding:0 16px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:#555;cursor:pointer;flex:none}
+.tabs button[aria-selected=true]{background:var(--black);color:var(--gold);border-color:var(--black)}
+.rec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.rec-sum{display:grid;grid-template-columns:repeat(5,1fr);background:var(--black);color:#fff;text-align:center}
+.rec-sum div{padding:16px 6px}
+.rec-sum small{display:block;font-size:12px;color:#999}
+.rec-sum b{font-size:26px;font-weight:900}
+.rec-sum b.w{color:var(--gold)}
+.rec-sum .only{background:var(--gold);color:#111}.rec-sum .only small{color:#4a3a14}.rec-sum .only b{font-size:18px;line-height:39px}
+.games{list-style:none}
+.games li{display:grid;grid-template-columns:56px 1fr auto 40px;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid #f0ede6;font-size:14px}
+.games .dt{font-weight:800;color:var(--muted)}
+.games .cup{color:#555;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.games .vs{font-weight:600;white-space:nowrap}
+.games .vs b{font-weight:900;color:var(--gold-deep);font-size:16px}
+.games i{font-style:normal;font-size:12px;font-weight:800;text-align:center;border-radius:4px;padding:3px 0}
+.games i.W{background:var(--black);color:var(--gold)}
+.games i.L{background:#eee;color:#888}
+.rec-foot{margin-top:10px;font-size:13.5px;color:#555}
+.rec-foot b{color:var(--gold-deep)}
 
 /* program */
 .prog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -212,6 +245,12 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
   .tbl th,.tbl td{padding:11px 8px;font-size:12.5px}
   .nw{white-space:normal}
   .evc{grid-template-columns:88px 1fr}.evc img{width:88px;height:88px}
+  .motto{grid-template-columns:auto auto 1fr;padding:18px}.motto .x{font-size:16px}.motto strong{font-size:24px}
+  .rec-sum{grid-template-columns:repeat(4,1fr)}.rec-sum .only{grid-column:1/-1;display:flex;justify-content:center;gap:10px;align-items:center;padding:8px}.rec-sum .only b{line-height:1.4;font-size:15px}
+  .games li{grid-template-columns:40px 1fr 34px;gap:4px 10px;padding:12px 14px}
+  .games .cup{grid-column:2/4;grid-row:2;font-size:12px}
+  .games .vs{grid-column:2;grid-row:1}
+  .games i{grid-column:3;grid-row:1}
   .strip{grid-auto-columns:62%}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -222,9 +261,10 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
 
 <header>
   <div class="wrap hd">
-    <a class="logo" href="#top" aria-label="JBJ 농구교실 처음으로"><b>JBJ</b><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
+    <a class="logo" href="#top" aria-label="JBJ 농구교실 처음으로"><img class="logo-img" src="../assets/jbj-logo.png" alt="JBJ" width="53" height="43"><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
     <nav class="gnb" id="gnb" aria-label="주메뉴">
       <a href="#program">수업·지점</a>
+      <a href="#record">경기 전적</a>
       <a href="#teams">발달장애 농구팀</a>
       <a href="#events">대회·행사</a>
       <a href="#story">JBJ 이야기</a>
@@ -276,9 +316,9 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
       <!-- 메인 배너: KBL 슬라이드 배너 자리 -->
       <section class="hero" aria-label="JBJ 소개">
         <div class="hero-txt">
-          <span class="eyebrow">JBJ BASKETBALL CLUB</span>
-          <h1>함께 뛰고,<br><span>한 뼘 더</span> 자라는 곳.</h1>
-          <p>안녕하세요. JBJ 농구교실입니다!<br>넘어져도 다시 일어서는 마음을 농구로 배웁니다.</p>
+          <img class="hero-logo" src="../assets/jbj-logo.png" alt="JBJ Basketball Club 로고" width="106" height="86">
+          <h1>Best One이 아닌,<br><span>Only One.</span></h1>
+          <p>안녕하세요. JBJ 농구교실입니다!<br>누군가보다 나은 한 명이 아니라, 하나뿐인 나로 코트에 섭니다.</p>
           <div class="acts">
             <a class="btn gold" href="#program">수업 알아보기</a>
             <a class="btn" href="#teams">발달장애 농구팀</a>
@@ -294,6 +334,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
       <!-- 철학: KBL '시즌 리더' 3단 카드 -->
       <section id="story" aria-labelledby="phil-t">
         <div class="sec-hd"><h2 id="phil-t">JBJ가 가르치는 것<small>PHILOSOPHY</small></h2><a class="more" href="#story">JBJ 이야기</a></div>
+        <div class="motto"><span class="x">BEST ONE</span><span class="arrow">→</span><strong>ONLY ONE</strong><p>1등 한 명을 가려내는 농구가 아니라, 아이 한 명 한 명이 자기만의 자리를 찾는 농구.</p></div>
         <div class="phil">
           <article class="pc">
             <div class="pc-top"><span class="no">01</span><h3>극복과 긍정</h3><span class="big">UP</span></div>
@@ -323,6 +364,51 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
           <span class="chip">산본 <b>1회 체험 · 1:1</b></span>
           <span class="chip">코치 <b>김찬호 · 유소망</b></span>
         </div>
+      </section>
+
+      <!-- 경기 전적: KBL 일정·결과 / 팀기록 대응 -->
+      <section id="record" aria-labelledby="rec-t">
+        <div class="sec-hd"><h2 id="rec-t">경기 전적<small>RECORD</small></h2><a class="more" href="#events">대회 안내</a></div>
+        <p class="sample-note"><b>예시</b>아래 숫자와 상대팀은 화면 구성을 보여주기 위한 예시입니다. 실제 대회 기록으로 교체합니다.</p>
+        <div class="tabs" role="tablist" aria-label="연령별 전적">
+          <button role="tab" aria-selected="true" data-t="u10">U10</button>
+          <button role="tab" aria-selected="false" data-t="u13">U13</button>
+          <button role="tab" aria-selected="false" data-t="u16">U16</button>
+          <button role="tab" aria-selected="false" data-t="team">블랙·골드</button>
+        </div>
+        <div class="rec" data-p="u10">
+          <div class="rec-sum"><div><small>경기</small><b>12</b></div><div><small>승</small><b class="w">8</b></div><div><small>패</small><b>4</b></div><div><small>승률</small><b>0.667</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
+          <ol class="games">
+            <li><span class="dt">10.25</span><span class="cup">OO구청장배 유소년대회</span><span class="vs">JBJ <b>34</b> : 28 상대팀 A</span><i class="W">승</i></li>
+            <li><span class="dt">10.25</span><span class="cup">OO구청장배 유소년대회</span><span class="vs">JBJ 22 : <b>30</b> 상대팀 B</span><i class="L">패</i></li>
+            <li><span class="dt">09.13</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>26</b> : 20 상대팀 C</span><i class="W">승</i></li>
+          </ol>
+        </div>
+        <div class="rec" data-p="u13" hidden>
+          <div class="rec-sum"><div><small>경기</small><b>10</b></div><div><small>승</small><b class="w">6</b></div><div><small>패</small><b>4</b></div><div><small>승률</small><b>0.600</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
+          <ol class="games">
+            <li><span class="dt">10.26</span><span class="cup">OO협회장배 대회</span><span class="vs">JBJ <b>41</b> : 37 상대팀 D</span><i class="W">승</i></li>
+            <li><span class="dt">10.12</span><span class="cup">OO협회장배 대회</span><span class="vs">JBJ 29 : <b>35</b> 상대팀 E</span><i class="L">패</i></li>
+            <li><span class="dt">09.13</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>33</b> : 31 상대팀 F</span><i class="W">승</i></li>
+          </ol>
+        </div>
+        <div class="rec" data-p="u16" hidden>
+          <div class="rec-sum"><div><small>경기</small><b>8</b></div><div><small>승</small><b class="w">5</b></div><div><small>패</small><b>3</b></div><div><small>승률</small><b>0.625</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
+          <ol class="games">
+            <li><span class="dt">11.01</span><span class="cup">OO시장배 대회</span><span class="vs">JBJ <b>52</b> : 47 상대팀 G</span><i class="W">승</i></li>
+            <li><span class="dt">10.18</span><span class="cup">OO시장배 대회</span><span class="vs">JBJ 40 : <b>44</b> 상대팀 H</span><i class="L">패</i></li>
+            <li><span class="dt">09.20</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>45</b> : 39 상대팀 I</span><i class="W">승</i></li>
+          </ol>
+        </div>
+        <div class="rec" data-p="team" hidden>
+          <div class="rec-sum"><div><small>경기</small><b>6</b></div><div><small>승</small><b class="w">3</b></div><div><small>패</small><b>3</b></div><div><small>승률</small><b>0.500</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
+          <ol class="games">
+            <li><span class="dt">08.15</span><span class="cup">JBJ 유소년 농구대회 (통합)</span><span class="vs">JBJ 블랙 <b>18</b> : 14 상대팀 J</span><i class="W">승</i></li>
+            <li><span class="dt">08.15</span><span class="cup">JBJ 유소년 농구대회 (통합)</span><span class="vs">JBJ 골드 12 : <b>16</b> 상대팀 K</span><i class="L">패</i></li>
+            <li><span class="dt">06.07</span><span class="cup">통합 농구 교류전</span><span class="vs">JBJ 블랙 <b>20</b> : 15 JBJ 골드</span><i class="W">승</i></li>
+          </ol>
+        </div>
+        <p class="rec-foot">승패는 기록하되, JBJ는 <b>모든 아이가 코트에 서는 것</b>을 더 중요한 기록으로 봅니다.</p>
       </section>
 
       <!-- 발달장애 농구팀 -->
@@ -413,7 +499,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
 <footer>
   <div class="wrap ft">
     <div>
-      <a class="logo" href="#top"><b>JBJ</b><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
+      <a class="logo" href="#top"><img class="logo-img" src="../assets/jbj-logo.png" alt="JBJ" width="53" height="43"><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
       <p>업체명 제이비제이(JBJ) 농구교실 · 대표 이항범 · 사업자등록번호 235-92-00367<br>사업장 소재지 서울 서초구 방배천로16길 11-16, 1층 102호<br>서초본점 수업 장소 서울 서초구 사임당로 151 B1 JBJ BASKETBALL CENTER</p>
       <p class="draft">로컬 제안 시안 v4 · 공식 홈페이지 아님 · <span class="ph">[개인정보처리방침 확인]</span></p>
     </div>
@@ -427,6 +513,8 @@ const set=o=>{g.classList.toggle('open',o);m.setAttribute('aria-expanded',o);m.s
 m.addEventListener('click',()=>set(!g.classList.contains('open')));
 g.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
+const tabs=document.querySelectorAll('.tabs [role=tab]');
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t));document.querySelectorAll('.rec').forEach(p=>p.hidden=p.dataset.p!==t.dataset.t)}));
 </script>
 </body>
 </html>
