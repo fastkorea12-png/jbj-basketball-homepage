@@ -25,9 +25,10 @@ img{display:block;max-width:100%}
 
 /* header */
 header{position:sticky;top:0;z-index:50;background:var(--black);border-bottom:1px solid #2b2b2b}
-.hd{display:flex;align-items:center;height:68px;gap:36px}
+.hd{display:flex;align-items:center;height:84px;gap:36px}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:-.02em}
-.logo-img{height:43px;width:auto}
+.logo-img{height:64px;width:auto;filter:drop-shadow(0 0 10px rgba(201,167,90,.25))}
+footer .logo-img{height:52px}
 .logo small{display:block;font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.14em}
 nav.gnb{display:flex;gap:28px;flex:1}
 nav.gnb a{color:#ddd;font-size:15px;font-weight:600;padding:22px 0;border-bottom:2px solid transparent}
@@ -42,7 +43,14 @@ nav.gnb a:hover{color:#fff;border-color:var(--gold)}
 .sched-hd{display:flex;align-items:baseline;justify-content:space-between;color:#fff;margin-bottom:12px}
 .sched-hd h2{font-size:15px;font-weight:700;color:var(--gold);letter-spacing:.02em}
 .sched-hd span{font-size:12px;color:#888}
-.sched-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sched-row{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:12px}
+.sc.result{background:linear-gradient(140deg,#2a2416,#1d1d1d);border-color:#5a4a24}
+.sc .score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;text-align:center}
+.sc .score span{font-size:12px;color:#bbb}
+.sc .score b{display:block;font-size:30px;font-weight:900;line-height:1.1;color:#fff}
+.sc .score .win b{color:var(--gold)}
+.sc .score em{font-style:normal;color:#666;font-weight:700}
+.sc .ex{font-style:normal;font-size:10px;font-weight:800;background:#806324;color:#fff;border-radius:4px;padding:1px 6px;margin-left:auto}
 .sc{background:var(--char);border:1px solid #333;border-radius:12px;padding:14px 16px;color:#fff;display:flex;flex-direction:column;gap:8px;min-height:128px}
 .sc .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#aaa}
 .sc .tag i{font-style:normal;font-weight:800;font-size:10px;padding:2px 6px;border-radius:4px;background:var(--gold);color:#000}
@@ -66,7 +74,7 @@ main{padding:36px 0 60px}
 /* hero banner */
 .hero{display:grid;grid-template-columns:1.05fr 1fr;border-radius:var(--r);overflow:hidden;background:var(--black);color:#fff;min-height:380px}
 .hero-txt{padding:40px 36px;display:flex;flex-direction:column;justify-content:center;gap:16px;position:relative}
-.hero-logo{width:106px;height:auto}
+.hero-logo{width:96px;height:auto}
 .hero-txt .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:700}
 .hero-txt h1{font-size:40px;line-height:1.2;font-weight:800;letter-spacing:-.03em}
 .hero-txt h1 span{color:var(--gold)}
@@ -222,7 +230,9 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
 @media (max-width:860px){
   nav.gnb,.hd-cta{display:none}
   .menu{display:block}
-  nav.gnb.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--black);padding:8px 16px 16px;border-bottom:1px solid #333}
+  .hd{height:72px}.logo-img{height:52px}
+  nav.gnb.open{top:72px!important}
+  nav.gnb.open{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;gap:0;background:var(--black);padding:8px 16px 16px;border-bottom:1px solid #333}
   nav.gnb.open a{padding:14px 4px;border-bottom:1px solid #2a2a2a}
   .sched-row{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory}
   .sc{scroll-snap-align:start}
@@ -261,7 +271,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
 
 <header>
   <div class="wrap hd">
-    <a class="logo" href="#top" aria-label="JBJ 농구교실 처음으로"><img class="logo-img" src="../assets/jbj-logo.png" alt="JBJ" width="53" height="43"><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
+    <a class="logo" href="#top" aria-label="JBJ 농구교실 처음으로"><img class="logo-img" src="../assets/jbj-logo.png" alt="JBJ" width="79" height="64"><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
     <nav class="gnb" id="gnb" aria-label="주메뉴">
       <a href="#program">수업·지점</a>
       <a href="#record">경기 전적</a>
@@ -282,8 +292,13 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
 <!-- 상단 일정 스트립: KBL '경기 일정' 카드 구조 -->
 <section class="sched" id="top" aria-labelledby="sched-t">
   <div class="wrap">
-    <div class="sched-hd"><h2 id="sched-t">다가오는 일정</h2><span>일정·장소는 지점 문의로 최종 확인</span></div>
+    <div class="sched-hd"><h2 id="sched-t">경기·일정</h2><span>일정·장소는 지점 문의로 최종 확인</span></div>
     <div class="sched-row">
+      <a class="sc result" href="#record">
+        <span class="tag"><i>최근 결과</i>U13 · 10.26<i class="ex">예시</i></span>
+        <div class="score"><div class="win"><b>41</b><span>JBJ</span></div><em>:</em><div><b>37</b><span>상대팀 D</span></div></div>
+        <p>OO협회장배 대회 · 전적 보기 →</p>
+      </a>
       <article class="sc">
         <span class="tag"><i>매주</i>토요일 · 정기 훈련</span>
         <h3>남녀 유소년 그룹 훈련</h3>
@@ -331,41 +346,6 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
         </figure>
       </section>
 
-      <!-- 철학: KBL '시즌 리더' 3단 카드 -->
-      <section id="story" aria-labelledby="phil-t">
-        <div class="sec-hd"><h2 id="phil-t">JBJ가 가르치는 것<small>PHILOSOPHY</small></h2><a class="more" href="#story">JBJ 이야기</a></div>
-        <div class="motto"><span class="x">BEST ONE</span><span class="arrow">→</span><strong>ONLY ONE</strong><p>1등 한 명을 가려내는 농구가 아니라, 아이 한 명 한 명이 자기만의 자리를 찾는 농구.</p></div>
-        <div class="phil">
-          <article class="pc">
-            <div class="pc-top"><span class="no">01</span><h3>극복과 긍정</h3><span class="big">UP</span></div>
-            <ul><li><b>·</b>넘어져도 다시 도전하는 마음</li><li><b>·</b>작은 키보다 큰 태도</li><li><b>·</b>실수를 배움으로 바꾸는 연습</li></ul>
-          </article>
-          <article class="pc">
-            <div class="pc-top"><span class="no">02</span><h3>서로 믿는 협동</h3><span class="big">PASS</span></div>
-            <ul><li><b>·</b>위치를 바꾸며 믿고 주는 패스</li><li><b>·</b>함께 이기고 함께 배우기</li><li><b>·</b>비장애·발달장애 선수가 한 코트에서</li></ul>
-          </article>
-          <article class="pc">
-            <div class="pc-top"><span class="no">03</span><h3>좋은 영향력</h3><span class="big">GIVE</span></div>
-            <ul><li><b>·</b>농구로 복음과 사랑을 전하기</li><li><b>·</b>순위 없는 크리스마스 대회</li><li><b>·</b>가정 밖 청소년을 돕는 나눔</li></ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- 프로그램 -->
-      <section id="program" aria-labelledby="prog-t">
-        <div class="sec-hd"><h2 id="prog-t">유소년 수업<small>PROGRAM</small></h2><a class="more" href="#branches">지점별 안내</a></div>
-        <div class="prog">
-          <article class="pg"><div class="age">U10<small>초등 저학년</small></div><p>공과 친해지고, 함께 뛰는 즐거움을 먼저 배워요.</p><dl><dt>시간</dt><dd><span class="ph">[확인]</span></dd><dt>수강료</dt><dd><span class="ph">[확인]</span></dd></dl></article>
-          <article class="pg"><div class="age">U13<small>초등 고학년</small></div><p>기본기와 팀 플레이, 경기 경험을 쌓아요.</p><dl><dt>시간</dt><dd><span class="ph">[확인]</span></dd><dt>수강료</dt><dd><span class="ph">[확인]</span></dd></dl></article>
-          <article class="pg"><div class="age">U16<small>중학생</small></div><p>대회에 나가며 경쟁하고 협력하는 법을 익혀요.</p><dl><dt>시간</dt><dd><span class="ph">[확인]</span></dd><dt>수강료</dt><dd><span class="ph">[확인]</span></dd></dl></article>
-        </div>
-        <div class="prog-sub">
-          <span class="chip">매주 <b>토요일</b> 남녀 그룹 훈련</span>
-          <span class="chip">산본 <b>1회 체험 · 1:1</b></span>
-          <span class="chip">코치 <b>김찬호 · 유소망</b></span>
-        </div>
-      </section>
-
       <!-- 경기 전적: KBL 일정·결과 / 팀기록 대응 -->
       <section id="record" aria-labelledby="rec-t">
         <div class="sec-hd"><h2 id="rec-t">경기 전적<small>RECORD</small></h2><a class="more" href="#events">대회 안내</a></div>
@@ -409,6 +389,42 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
           </ol>
         </div>
         <p class="rec-foot">승패는 기록하되, JBJ는 <b>모든 아이가 코트에 서는 것</b>을 더 중요한 기록으로 봅니다.</p>
+      </section>
+
+
+      <!-- 철학: KBL '시즌 리더' 3단 카드 -->
+      <section id="story" aria-labelledby="phil-t">
+        <div class="sec-hd"><h2 id="phil-t">JBJ가 가르치는 것<small>PHILOSOPHY</small></h2><a class="more" href="#story">JBJ 이야기</a></div>
+        <div class="motto"><span class="x">BEST ONE</span><span class="arrow">→</span><strong>ONLY ONE</strong><p>1등 한 명을 가려내는 농구가 아니라, 아이 한 명 한 명이 자기만의 자리를 찾는 농구.</p></div>
+        <div class="phil">
+          <article class="pc">
+            <div class="pc-top"><span class="no">01</span><h3>극복과 긍정</h3><span class="big">UP</span></div>
+            <ul><li><b>·</b>넘어져도 다시 도전하는 마음</li><li><b>·</b>작은 키보다 큰 태도</li><li><b>·</b>실수를 배움으로 바꾸는 연습</li></ul>
+          </article>
+          <article class="pc">
+            <div class="pc-top"><span class="no">02</span><h3>서로 믿는 협동</h3><span class="big">PASS</span></div>
+            <ul><li><b>·</b>위치를 바꾸며 믿고 주는 패스</li><li><b>·</b>함께 이기고 함께 배우기</li><li><b>·</b>비장애·발달장애 선수가 한 코트에서</li></ul>
+          </article>
+          <article class="pc">
+            <div class="pc-top"><span class="no">03</span><h3>좋은 영향력</h3><span class="big">GIVE</span></div>
+            <ul><li><b>·</b>농구로 복음과 사랑을 전하기</li><li><b>·</b>순위 없는 크리스마스 대회</li><li><b>·</b>가정 밖 청소년을 돕는 나눔</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- 프로그램 -->
+      <section id="program" aria-labelledby="prog-t">
+        <div class="sec-hd"><h2 id="prog-t">유소년 수업<small>PROGRAM</small></h2><a class="more" href="#branches">지점별 안내</a></div>
+        <div class="prog">
+          <article class="pg"><div class="age">U10<small>초등 저학년</small></div><p>공과 친해지고, 함께 뛰는 즐거움을 먼저 배워요.</p><dl><dt>시간</dt><dd><span class="ph">[확인]</span></dd><dt>수강료</dt><dd><span class="ph">[확인]</span></dd></dl></article>
+          <article class="pg"><div class="age">U13<small>초등 고학년</small></div><p>기본기와 팀 플레이, 경기 경험을 쌓아요.</p><dl><dt>시간</dt><dd><span class="ph">[확인]</span></dd><dt>수강료</dt><dd><span class="ph">[확인]</span></dd></dl></article>
+          <article class="pg"><div class="age">U16<small>중학생</small></div><p>대회에 나가며 경쟁하고 협력하는 법을 익혀요.</p><dl><dt>시간</dt><dd><span class="ph">[확인]</span></dd><dt>수강료</dt><dd><span class="ph">[확인]</span></dd></dl></article>
+        </div>
+        <div class="prog-sub">
+          <span class="chip">매주 <b>토요일</b> 남녀 그룹 훈련</span>
+          <span class="chip">산본 <b>1회 체험 · 1:1</b></span>
+          <span class="chip">코치 <b>김찬호 · 유소망</b></span>
+        </div>
       </section>
 
       <!-- 발달장애 농구팀 -->
@@ -499,7 +515,7 @@ footer .draft{margin-top:16px;color:#666;font-size:12px}
 <footer>
   <div class="wrap ft">
     <div>
-      <a class="logo" href="#top"><img class="logo-img" src="../assets/jbj-logo.png" alt="JBJ" width="53" height="43"><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
+      <a class="logo" href="#top"><img class="logo-img" src="../assets/jbj-logo.png" alt="JBJ" width="79" height="64"><span>JBJ 농구교실<small>JESUS BABY JORDAN</small></span></a>
       <p>업체명 제이비제이(JBJ) 농구교실 · 대표 이항범 · 사업자등록번호 235-92-00367<br>사업장 소재지 서울 서초구 방배천로16길 11-16, 1층 102호<br>서초본점 수업 장소 서울 서초구 사임당로 151 B1 JBJ BASKETBALL CENTER</p>
       <p class="draft">로컬 제안 시안 v4 · 공식 홈페이지 아님 · <span class="ph">[개인정보처리방침 확인]</span></p>
     </div>
