@@ -23,9 +23,10 @@ html{scroll-behavior:smooth}
 body{font-family:Pretendard,-apple-system,system-ui,"Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;word-break:keep-all}
 a{color:inherit;text-decoration:none}
 a,button{touch-action:manipulation}
+[hidden]{display:none!important}
 [id]{scroll-margin-top:100px}
 h1,h2,h3{text-wrap:balance}
-.btn,.more,.tabs button,.sc,.tm .go,.cta-card a,nav.gnb a{transition:color .18s,background-color .18s,border-color .18s,transform .18s}
+.btn,.more,.sc,.tm .go,.cta-card a,nav.gnb a{transition:color .18s,background-color .18s,border-color .18s,transform .18s}
 img{display:block;max-width:100%;height:auto}
 .wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
 .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--gold);color:#000;padding:8px 12px;z-index:99}
@@ -59,12 +60,6 @@ nav.gnb a:hover{color:#fff;border-color:var(--gold)}
 .sched-row{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:12px}
 .sc.result:hover{border-color:var(--gold);transform:translateY(-2px)}
 .sc.result{background:linear-gradient(140deg,#2a2416,#1d1d1d);border-color:#5a4a24}
-.sc .score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;text-align:center}
-.sc .score span{font-size:12px;color:#bbb}
-.sc .score b{display:block;font-size:30px;font-weight:900;line-height:1.1;color:#fff}
-.sc .score .win b{color:var(--gold)}
-.sc .score em{font-style:normal;color:#666;font-weight:700}
-.sc .ex{font-style:normal;font-size:10px;font-weight:800;background:#806324;color:#fff;border-radius:4px;padding:1px 6px;margin-left:auto}
 .sc{background:var(--char);border:1px solid #333;border-radius:12px;padding:14px 16px;color:#fff;display:flex;flex-direction:column;gap:8px;min-height:128px}
 .sc .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#aaa}
 .sc .tag i{font-style:normal;font-weight:800;font-size:10px;padding:2px 6px;border-radius:4px;background:var(--gold);color:#000}
@@ -123,19 +118,12 @@ a.more:hover::after{border-color:var(--ink)}
 .motto p{grid-column:1/-1;color:#bbb;font-size:14px}
 
 /* record */
-.sample-note{display:flex;gap:10px;align-items:center;font-size:13px;color:#6b5a2e;background:var(--gold-soft);border:1px dashed #cbb37a;border-radius:10px;padding:10px 14px;margin-bottom:12px}
-.sample-note b{background:var(--gold-deep);color:#fff;border-radius:4px;padding:1px 8px;font-size:12px;flex:none}
-.tabs{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto}
-.tabs button{font:inherit;font-size:14px;font-weight:700;height:38px;padding:0 16px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:#555;cursor:pointer;flex:none}
-.tabs button:hover{border-color:var(--ink);color:var(--ink)}
-.tabs button[aria-selected=true]{background:var(--black);color:var(--gold);border-color:var(--black)}
 .rec{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .rec-sum{display:grid;grid-template-columns:repeat(5,1fr);background:var(--black);color:#fff;text-align:center}
 .rec-sum div{padding:16px 6px}
 .rec-sum small{display:block;font-size:12px;color:#999}
 .rec-sum b{font-size:26px;font-weight:900}
 .rec-sum b.w{color:var(--gold)}
-.rec-sum .only{background:var(--gold);color:#111}.rec-sum .only small{color:#4a3a14}.rec-sum .only b{font-size:18px;line-height:39px}
 .games{list-style:none}
 .games li{display:grid;grid-template-columns:56px 1fr auto 40px;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid #f0ede6;font-size:14px}
 .games .dt{font-weight:800;color:var(--muted)}
@@ -143,10 +131,6 @@ a.more:hover::after{border-color:var(--ink)}
 .games .vs{font-weight:600;white-space:nowrap}
 .games .vs b{font-weight:900;color:var(--gold-deep);font-size:16px}
 .games i{font-style:normal;font-size:12px;font-weight:800;text-align:center;border-radius:4px;padding:3px 0}
-.games i.W{background:var(--black);color:var(--gold)}
-.games i.L{background:#ECEAE4;color:#55524C}
-.rec-foot{margin-top:10px;font-size:13.5px;color:#555}
-.rec-foot b{color:var(--gold-deep)}
 
 /* program */
 .prog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -238,16 +222,90 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
 .ft-links{display:flex;gap:18px;font-weight:600;color:#ccc}
 
 /* numbers & display face */
-.sc .score b,.rec-sum b,.games,.mvp-stats b,.mvp-top .num,.pg .age,.evc .d{font-variant-numeric:tabular-nums}
-.sc .score b,.rec-sum b,.games .vs b,.games .dt,.pg .age,.motto strong,.motto .x,.mvp-top .num,.mvp-stats b,.sc .lv em,.pc-top .big,.hero-txt h1 span,.tabs button,.tm h3{font-family:var(--disp)}
-.sc .score b{font-size:36px;font-weight:800}
+.rec-sum b,.games,.mvp-stats b,.mvp-top .num,.pg .age,.evc .d{font-variant-numeric:tabular-nums}
+.rec-sum b,.games .vs b,.games .dt,.pg .age,.motto strong,.motto .x,.mvp-top .num,.mvp-stats b,.sc .lv em,.pc-top .big,.hero-txt h1 span,.tm h3{font-family:var(--disp)}
 .rec-sum b{font-size:32px;font-weight:800}
 .games .vs b{font-size:19px}
 .pg .age{font-size:42px;font-weight:800;letter-spacing:0}
 .motto strong{font-size:42px;letter-spacing:.01em}
 .hero-txt h1 span{font-size:1.18em;font-weight:800;letter-spacing:0}
 .mvp-top .num{font-size:118px;letter-spacing:-.02em}
-.tabs button{font-size:16px;letter-spacing:.02em}
+
+/* records (real) */
+.rec-sum{grid-template-columns:repeat(4,1fr)!important}
+.rec-sum b small.u{display:inline;font-size:14px;color:inherit;margin-left:2px;font-family:Pretendard,sans-serif}
+.games li{grid-template-columns:96px 1fr auto 56px}
+.games .vs{font-weight:700}
+.games i.r-win{background:var(--gold);color:#111}
+.games i.r-2nd{background:var(--black);color:var(--gold)}
+.games i.r-in{background:#ECEAE4;color:#55524C}
+.quote{margin-top:14px;padding:16px 18px;border-left:3px solid var(--gold);background:var(--card)}
+.quote p{font-size:15px;font-weight:600;line-height:1.6}
+.quote cite{display:block;margin-top:6px;font-size:12.5px;color:var(--muted);font-style:normal}
+.src{margin-top:8px;font-size:12px;color:var(--muted)}
+.src a{text-decoration:underline;text-underline-offset:2px}
+.sc .trophy{display:flex;align-items:baseline;gap:10px}
+.sc .trophy b{font-family:var(--disp);font-size:38px;font-weight:800;color:var(--gold);line-height:1}
+.sc .trophy span{font-size:14px;font-weight:700}
+
+/* team link */
+.team-link{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--black);color:#fff;border-radius:var(--r);padding:24px 26px}
+.team-link .k{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.06em}
+.team-link h2{font-size:19px;font-weight:800;margin:4px 0}
+.team-link p{font-size:13.5px;color:#bbb}
+.team-link .btn{flex:none;height:44px;padding:0 18px;font-size:14px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:16px;align-items:start}
+.cform,.cdone{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:16px}
+.cform fieldset{border:0;min-width:0}
+.cform legend,.cform label[for]{display:block;font-size:13.5px;font-weight:700;margin-bottom:8px}
+.cform legend small,.cform label small{font-weight:500;color:var(--muted)}
+.choices{display:flex;flex-wrap:wrap;gap:8px}
+.choices label{position:relative}
+.choices input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.choices span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:22px;font-size:14px;font-weight:600;background:#fff;transition:background-color .15s,border-color .15s,color .15s}
+.choices.sm span{min-height:40px;font-size:13.5px}
+.choices input:checked+span{background:var(--black);border-color:var(--black);color:var(--gold)}
+.choices input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.choices label:hover span{border-color:var(--ink)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{min-width:0}
+.cform input:not([type=radio]):not([type=checkbox]),.cform select,.cform textarea{width:100%;font:inherit;font-size:16px;padding:11px 12px;min-height:46px;border:1px solid #CFCAC0;border-radius:8px;background:#fff;color:var(--ink)}
+.cform textarea{resize:vertical}
+.cform :is(input,select,textarea):focus-visible{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold-deep)}
+.cform [aria-invalid=true]{border-color:#B3261E!important}
+.err{color:#B3261E;font-size:13px;margin-top:6px;min-height:0}
+.err:empty{display:none}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#444;background:#FAF9F5;border-radius:8px;padding:12px}
+.agree input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:#141414}
+.submit{height:52px!important;font-size:16px!important;justify-content:center}
+.demo{font-size:12px;color:var(--muted);text-align:center}
+.cdone b{font-size:20px}
+.cdone p{font-size:14px;color:#444}
+.cinfo{background:var(--black);color:#ddd;border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:18px}
+.cinfo h3{color:#fff;font-size:16px}
+.steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;column-gap:10px;font-size:13px}
+.steps li::before{content:counter(s);grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-weight:800;font-family:var(--disp)}
+.steps b{color:#fff;font-size:14px}
+.steps span{color:#aaa}
+.trust{list-style:none;display:grid;gap:8px;border-top:1px solid #333;padding-top:14px;font-size:13px}
+.trust b{display:inline-block;min-width:48px;color:var(--gold);font-weight:700}
+.call{font-size:13px;color:#aaa;line-height:1.8}
+.call a{color:#fff;font-weight:700}
+.faq{margin-top:28px}
+.faq h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 2px;font-weight:700;font-size:15px;min-height:52px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--disp);font-size:24px;color:var(--gold-deep);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--gold-deep)}
+.faq details p{padding:0 2px 16px;font-size:14px;color:#444;max-width:65ch}
+.faq details a{text-decoration:underline}
+.mbar{display:none}
 
 /* responsive */
 @media (max-width:1080px){
@@ -274,6 +332,11 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
   .ev{grid-template-columns:1fr}
   .side{grid-template-columns:1fr}
   .ft{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+  .team-link{flex-direction:column;align-items:flex-start}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:8px;padding:10px max(16px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px));background:rgba(20,20,20,.96);border-top:1px solid #333}
+  .mbar .btn{flex:1;justify-content:center;height:48px;font-size:15px}
+  footer{padding-bottom:110px}
 }
 @media (max-width:480px){
   .wrap{padding:0 16px}
@@ -283,11 +346,13 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
   .nw{white-space:normal}
   .evc{grid-template-columns:88px 1fr}.evc img{width:88px;height:88px}
   .motto{grid-template-columns:auto auto 1fr;padding:18px}.motto .x{font-size:16px}.motto strong{font-size:24px}
-  .rec-sum{grid-template-columns:repeat(4,1fr)}.rec-sum .only{grid-column:1/-1;display:flex;justify-content:center;gap:10px;align-items:center;padding:8px}.rec-sum .only b{line-height:1.4;font-size:15px}
-  .games li{grid-template-columns:40px 1fr 34px;gap:4px 10px;padding:12px 14px}
-  .games .cup{grid-column:2/4;grid-row:2;font-size:12px}
-  .games .vs{grid-column:2;grid-row:1}
-  .games i{grid-column:3;grid-row:1}
+  .row2{grid-template-columns:1fr}
+  .rec-sum b{font-size:26px}
+  .games li{grid-template-columns:1fr 52px;gap:2px 10px;padding:12px 14px}
+  .games .dt{grid-column:1;grid-row:1;font-size:12px}
+  .games .cup{grid-column:1;grid-row:3;font-size:12px;white-space:normal}
+  .games .vs{grid-column:1;grid-row:2}
+  .games i{grid-column:2;grid-row:1/4;align-self:center}
   .strip{grid-auto-columns:62%}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.sc.result:hover{transform:none}}
@@ -301,16 +366,16 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
     <a class="logo" href="#top" aria-label="JBJ 농구교실 처음으로"><img class="logo-img" src="../assets/jbj-logo.png" alt="JBJ" width="79" height="64"><span>JBJ 농구교실<small>BASKETBALL CLUB</small></span></a>
     <nav class="gnb" id="gnb" aria-label="주메뉴">
       <a href="#program">수업·지점</a>
-      <a href="#record">경기 전적</a>
-      <a href="#teams">발달장애 농구팀</a>
+      <a href="#record">대회 기록</a>
       <a href="#events">대회·행사</a>
       <a href="#story">JBJ 이야기</a>
       <a href="#gallery">갤러리</a>
       <a href="#rent">대관</a>
+      <a href="#contact">문의</a>
     </nav>
     <div class="hd-cta">
       <a class="btn" href="https://www.instagram.com/jbj_basketball_club/" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn gold" href="tel:050714747723">체험 상담</a>
+      <a class="btn gold" href="#contact">문의 신청</a>
     </div>
     <button class="menu" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb">☰</button>
   </div>
@@ -322,9 +387,9 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
     <div class="sched-hd"><h2 id="sched-t">경기·일정</h2><span>일정·장소는 지점 문의로 최종 확인</span></div>
     <div class="sched-row">
       <a class="sc result" href="#record">
-        <span class="tag"><i>최근 결과</i>U13 · 10.26<i class="ex">예시</i></span>
-        <div class="score"><div class="win"><b>41</b><span>JBJ</span></div><em>:</em><div><b>37</b><span>상대팀 D</span></div></div>
-        <p>OO협회장배 대회 · 전적 보기 →</p>
+        <span class="tag"><i>최근 결과</i>2026.08.17</span>
+        <div class="trophy"><b>우승</b><span>용인JBJ · 중1부</span></div>
+        <p>제9회 JBJ 유소년 농구대회 · 기록 보기 →</p>
       </a>
       <article class="sc">
         <span class="tag"><i>매주</i>토요일 · 정기 훈련</span>
@@ -363,7 +428,7 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
           <p>안녕하세요. JBJ 농구교실입니다!<br>등수보다 나다운 플레이를 먼저 배웁니다.</p>
           <div class="acts">
             <a class="btn gold" href="#program">수업 알아보기</a>
-            <a class="btn" href="#teams">발달장애 농구팀</a>
+            <a class="btn" href="#contact">문의 신청</a>
           </div>
         </div>
         <figure class="hero-img">
@@ -372,49 +437,26 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
         </figure>
       </section>
 
-      <!-- 경기 전적: KBL 일정·결과 / 팀기록 대응 -->
+      <!-- 대회 기록: 바스켓코리아 보도 기준 실제 기록 -->
       <section id="record" aria-labelledby="rec-t">
-        <div class="sec-hd"><h2 id="rec-t">경기 전적<small>RECORD</small></h2><a class="more" href="#events">대회 안내</a></div>
-        <p class="sample-note"><b>예시</b>아래 숫자와 상대팀은 화면 구성을 보여주기 위한 예시입니다. 실제 대회 기록으로 교체합니다.</p>
-        <div class="tabs" role="tablist" aria-label="연령별 전적">
-          <button role="tab" id="tab-u10" aria-selected="true" aria-controls="panel-u10" tabindex="0" data-t="u10">U10</button>
-          <button role="tab" id="tab-u13" aria-selected="false" aria-controls="panel-u13" tabindex="-1" data-t="u13">U13</button>
-          <button role="tab" id="tab-u16" aria-selected="false" aria-controls="panel-u16" tabindex="-1" data-t="u16">U16</button>
-          <button role="tab" id="tab-team" aria-selected="false" aria-controls="panel-team" tabindex="-1" data-t="team">블랙·골드</button>
-        </div>
-        <div class="rec" role="tabpanel" id="panel-u10" aria-labelledby="tab-u10" tabindex="0" data-p="u10">
-          <div class="rec-sum"><div><small>경기</small><b>12</b></div><div><small>승</small><b class="w">8</b></div><div><small>패</small><b>4</b></div><div><small>승률</small><b>0.667</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
+        <div class="sec-hd"><h2 id="rec-t">대회 기록<small>RECORD</small></h2><a class="more" href="#events">대회 안내</a></div>
+        <div class="rec">
+          <div class="rec-sum">
+            <div><small>우승</small><b class="w">2</b></div>
+            <div><small>준우승</small><b>1</b></div>
+            <div><small>2026 출전</small><b>7<small class="u">팀</small></b></div>
+            <div><small>대회 개최</small><b>9<small class="u">회</small></b></div>
+          </div>
           <ol class="games">
-            <li><span class="dt">10.25</span><span class="cup">OO구청장배 유소년대회</span><span class="vs">JBJ <b>34</b> : 28 상대팀 A</span><i class="W">승</i></li>
-            <li><span class="dt">10.25</span><span class="cup">OO구청장배 유소년대회</span><span class="vs">JBJ 22 : <b>30</b> 상대팀 B</span><i class="L">패</i></li>
-            <li><span class="dt">09.13</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>26</b> : 20 상대팀 C</span><i class="W">승</i></li>
+            <li><span class="dt">2026.08.17</span><span class="cup">제9회 JBJ 유소년 농구대회 · 중1부</span><span class="vs">용인JBJ</span><i class="r-win">우승</i></li>
+            <li><span class="dt">2026.08.17</span><span class="cup">제9회 JBJ 유소년 농구대회 · 초등·중등부</span><span class="vs">서초·산본·용인·강남 7팀</span><i class="r-in">출전</i></li>
+            <li><span class="dt">2025.08.15</span><span class="cup">제8회 JBJ 유소년 농구대회 · 유소년부</span><span class="vs">용인노리터JBJ</span><i class="r-win">우승</i></li>
+            <li><span class="dt">2025.08.15</span><span class="cup">제8회 JBJ 유소년 농구대회 · 발달장애 1부</span><span class="vs">JBJ 블랙</span><i class="r-2nd">준우승</i></li>
+            <li><span class="dt">2025.07.19</span><span class="cup">서울YMCA 바스켓타임 · 5번째 교류전</span><span class="vs">JBJ 유소년</span><i class="r-in">교류전</i></li>
           </ol>
         </div>
-        <div class="rec" role="tabpanel" id="panel-u13" aria-labelledby="tab-u13" tabindex="0" data-p="u13" hidden>
-          <div class="rec-sum"><div><small>경기</small><b>10</b></div><div><small>승</small><b class="w">6</b></div><div><small>패</small><b>4</b></div><div><small>승률</small><b>0.600</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
-          <ol class="games">
-            <li><span class="dt">10.26</span><span class="cup">OO협회장배 대회</span><span class="vs">JBJ <b>41</b> : 37 상대팀 D</span><i class="W">승</i></li>
-            <li><span class="dt">10.12</span><span class="cup">OO협회장배 대회</span><span class="vs">JBJ 29 : <b>35</b> 상대팀 E</span><i class="L">패</i></li>
-            <li><span class="dt">09.13</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>33</b> : 31 상대팀 F</span><i class="W">승</i></li>
-          </ol>
-        </div>
-        <div class="rec" role="tabpanel" id="panel-u16" aria-labelledby="tab-u16" tabindex="0" data-p="u16" hidden>
-          <div class="rec-sum"><div><small>경기</small><b>8</b></div><div><small>승</small><b class="w">5</b></div><div><small>패</small><b>3</b></div><div><small>승률</small><b>0.625</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
-          <ol class="games">
-            <li><span class="dt">11.01</span><span class="cup">OO시장배 대회</span><span class="vs">JBJ <b>52</b> : 47 상대팀 G</span><i class="W">승</i></li>
-            <li><span class="dt">10.18</span><span class="cup">OO시장배 대회</span><span class="vs">JBJ 40 : <b>44</b> 상대팀 H</span><i class="L">패</i></li>
-            <li><span class="dt">09.20</span><span class="cup">YMCA 바스켓타임 교류전</span><span class="vs">JBJ <b>45</b> : 39 상대팀 I</span><i class="W">승</i></li>
-          </ol>
-        </div>
-        <div class="rec" role="tabpanel" id="panel-team" aria-labelledby="tab-team" tabindex="0" data-p="team" hidden>
-          <div class="rec-sum"><div><small>경기</small><b>6</b></div><div><small>승</small><b class="w">3</b></div><div><small>패</small><b>3</b></div><div><small>승률</small><b>0.500</b></div><div class="only"><small>이번 시즌</small><b>전원 출전</b></div></div>
-          <ol class="games">
-            <li><span class="dt">08.15</span><span class="cup">JBJ 유소년 농구대회 (통합)</span><span class="vs">JBJ 블랙 <b>18</b> : 14 상대팀 J</span><i class="W">승</i></li>
-            <li><span class="dt">08.15</span><span class="cup">JBJ 유소년 농구대회 (통합)</span><span class="vs">JBJ 골드 12 : <b>16</b> 상대팀 K</span><i class="L">패</i></li>
-            <li><span class="dt">06.07</span><span class="cup">통합 농구 교류전</span><span class="vs">JBJ 블랙 <b>20</b> : 15 JBJ 골드</span><i class="W">승</i></li>
-          </ol>
-        </div>
-        <p class="rec-foot">승패도 기록합니다. JBJ가 가장 먼저 보는 기록은 <b>모든 아이가 코트에 서는 것</b>입니다.</p>
+        <blockquote class="quote"><p>“두려움 대신 농구를 통하여 멋진 꿈을 꾸고 올바른 자신감, 자존감 형성으로 앞으로 멋진 담대한 성장을 이뤘으면 한다.”</p><cite>이항범 대표 · 제8회 JBJ 유소년 농구대회</cite></blockquote>
+        <p class="src">출처: <a href="https://basketkorea.com/news/newsview.php?ncode=1065592388824381" target="_blank" rel="noopener">바스켓코리아(제9회)</a> · <a href="https://basketkorea.com/news/newsview.php?ncode=1065604247080450" target="_blank" rel="noopener">바스켓코리아(제8회)</a> · <a href="https://basketkorea.com/news/newsview.php?ncode=1065604177973349" target="_blank" rel="noopener">바스켓코리아(바스켓타임)</a>. 경기별 점수는 보도되지 않아 싣지 않았습니다.</p>
       </section>
 
 
@@ -453,15 +495,14 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
         </div>
       </section>
 
-      <!-- 발달장애 농구팀 -->
-      <section id="teams" aria-labelledby="team-t">
-        <div class="sec-hd"><h2 id="team-t">발달장애 농구팀<small>TEAMS</small></h2><a class="more" href="#teams">팀 문의</a></div>
-        <div class="teams">
-          <article class="tm black"><span class="k">TEAM</span><h3>JBJ 블랙</h3><p>제8회 JBJ 유소년 농구대회 '대한통합농구만세' 참가팀. 훈련·모집 <span class="ph">[확인]</span></p><a class="go" href="../team-black.html">팀 보기 →</a></article>
-          <article class="tm gold"><span class="k">TEAM</span><h3>JBJ 골드</h3><p>제8회 JBJ 유소년 농구대회 '대한통합농구만세' 참가팀. 훈련·모집 <span class="ph">[확인]</span></p><a class="go" href="../team-gold.html">팀 보기 →</a></article>
-          <article class="tm tbd"><span class="k">TEAM</span><h3>세 번째 팀</h3><p>정식 팀명과 운영 안내 <span class="ph">[확인 중]</span></p><a class="go" href="../team-pending.html">안내 보기 →</a></article>
+      <!-- 발달장애 농구팀: 별도 홈페이지로 연결 -->
+      <section id="teams" class="team-link" aria-labelledby="team-t">
+        <div>
+          <span class="k">JBJ 블랙 · JBJ 골드</span>
+          <h2 id="team-t">발달장애 농구팀은 별도 홈페이지에서 소개합니다.</h2>
+          <p>훈련 안내와 참여 문의는 팀 홈페이지에서 확인해 주세요. <span class="ph">[별도 홈페이지 준비 중]</span></p>
         </div>
-        <p class="team-note">비장애·발달장애 선수가 서로 존중하고 응원하는 코트. 2025년 광복절 대회에는 발달장애 청소년 농구단 6팀이 함께 뛰었습니다.</p>
+        <a class="btn gold" href="../team-black.html">팀 홈페이지 가기</a>
       </section>
 
       <!-- 대회·행사 -->
@@ -485,6 +526,81 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
           <figure class="ph-card"><img src="../assets/photo-13.jpg" alt="" width="465" height="480" loading="lazy" decoding="async"><figcaption class="cap"><b>서초본점</b><span>JBJ 로고 벽면</span></figcaption></figure>
           <figure class="ph-card"><img src="../assets/photo-11.jpg" alt="" width="508" height="413" loading="lazy" decoding="async"><figcaption class="cap"><b>유소년 농구대회</b><span>참가팀 기념 사진</span></figcaption></figure>
           <figure class="ph-card"><img src="../assets/photo-04.jpg" alt="" width="344" height="355" loading="lazy" decoding="async"><figcaption class="cap"><b>JBJ 행사</b><span>참가자 단체 사진</span></figcaption></figure>
+        </div>
+      </section>
+
+      <!-- 문의 신청 + FAQ -->
+      <section id="contact" aria-labelledby="ct-t">
+        <div class="sec-hd"><h2 id="ct-t">문의 신청<small>CONTACT</small></h2></div>
+        <div class="contact">
+          <form class="cform" id="cform" novalidate>
+            <fieldset>
+              <legend>무엇이 궁금하세요?</legend>
+              <div class="choices" role="radiogroup">
+                <label><input type="radio" name="kind" value="체험 수업" checked><span>체험 수업</span></label>
+                <label><input type="radio" name="kind" value="정규 수업"><span>정규 수업</span></label>
+                <label><input type="radio" name="kind" value="1:1 레슨"><span>1:1 레슨</span></label>
+                <label><input type="radio" name="kind" value="코트 대관"><span>코트 대관</span></label>
+                <label><input type="radio" name="kind" value="기타"><span>기타</span></label>
+              </div>
+            </fieldset>
+            <div class="row2">
+              <div class="f"><label for="c-branch">지점</label>
+                <select id="c-branch" name="branch" required><option value="">선택해 주세요</option><option>서초본점</option><option>산본퍼스트센터점</option><option>용인노리터점</option><option>아직 모르겠어요</option></select></div>
+              <div class="f" id="f-grade"><label for="c-grade">아이 학년</label>
+                <select id="c-grade" name="grade"><option value="">선택해 주세요</option><option>초등 1–2학년</option><option>초등 3–4학년</option><option>초등 5–6학년</option><option>중학생</option><option>고등학생</option><option>성인</option></select></div>
+            </div>
+            <fieldset class="f">
+              <legend>희망 시간대 <small>(여러 개 선택 가능)</small></legend>
+              <div class="choices sm">
+                <label><input type="checkbox" name="time" value="평일 오후"><span>평일 오후</span></label>
+                <label><input type="checkbox" name="time" value="평일 저녁"><span>평일 저녁</span></label>
+                <label><input type="checkbox" name="time" value="토요일"><span>토요일</span></label>
+                <label><input type="checkbox" name="time" value="일요일"><span>일요일</span></label>
+              </div>
+            </fieldset>
+            <div class="row2">
+              <div class="f"><label for="c-name">보호자 이름</label><input id="c-name" name="name" autocomplete="name" required placeholder="예: 김민지…"></div>
+              <div class="f"><label for="c-tel">연락처</label><input id="c-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required placeholder="010-0000-0000…"><p class="err" id="e-tel" aria-live="polite"></p></div>
+            </div>
+            <div class="f"><label for="c-msg">더 알려주실 내용 <small>(선택)</small></label><textarea id="c-msg" name="msg" rows="3" placeholder="예: 농구는 처음이고, 친구와 함께 다니고 싶어요…"></textarea></div>
+            <label class="agree"><input type="checkbox" id="c-agree" required><span><b>개인정보 수집·이용 동의 (필수)</b> 이름·연락처를 상담 연락에만 사용하고, 상담이 끝나면 <span class="ph">[보관 기간 확인]</span> 후 파기합니다.</span></label>
+            <p class="err" id="e-form" aria-live="polite"></p>
+            <button class="btn gold submit" type="submit">문의 남기기</button>
+            <p class="demo">시안 화면입니다. 실제로 전송되지 않습니다.</p>
+          </form>
+          <div class="cdone" id="cdone" hidden tabindex="-1">
+            <b>문의가 접수되었습니다.</b>
+            <p id="cdone-sum"></p>
+            <p>담당 코치가 <span class="ph">[연락 시간 확인]</span> 안에 남겨주신 번호로 연락드립니다.</p>
+            <p class="demo">시안 화면이라 실제로 전송되지 않았습니다.</p>
+          </div>
+          <aside class="cinfo" aria-label="문의 후 진행 과정">
+            <h3>문의 후에는 이렇게 진행돼요</h3>
+            <ol class="steps">
+              <li><b>문의 남기기</b><span>지점·학년·희망 시간을 한 번에 남겨요.</span></li>
+              <li><b>코치 연락</b><span>반 배정과 비용을 안내해 드려요.</span></li>
+              <li><b>체험 수업</b><span>코트에서 직접 경험해 보고 결정해요.</span></li>
+            </ol>
+            <ul class="trust">
+              <li><b>코치진</b>이항범 대표 · 김찬호 · 유소망 코치</li>
+              <li><b>협력</b>2020년 서울YMCA 업무협약</li>
+              <li><b>대회</b>JBJ 유소년 농구대회 9회 개최</li>
+              <li><b>사업자</b>235-92-00367</li>
+            </ul>
+            <p class="call">급한 문의는 전화로<br><a href="tel:050714747723">서초 0507-1474-7723</a><br><a href="tel:050895952937">산본 0508-9595-2937</a></p>
+          </aside>
+        </div>
+
+        <div class="faq" id="faq">
+          <h3>자주 묻는 질문</h3>
+          <details><summary>농구를 처음 해도 괜찮나요?</summary><p>U10·U13·U16 연령별 그룹으로 나눠 수업합니다. 산본퍼스트센터점은 1회 체험 수업을 운영합니다. 다른 지점 체험 여부는 <span class="ph">[확인]</span></p></details>
+          <details><summary>수강료는 얼마인가요?</summary><p>지점과 반(그룹·소그룹·1:1)에 따라 달라 상담 때 안내해 드립니다. <span class="ph">[지점별 수강료 확인]</span></p></details>
+          <details><summary>수업은 언제 하나요?</summary><p>매주 토요일 남녀 유소년 그룹 훈련을 합니다. 지점별 평일 반 시간은 <span class="ph">[확인]</span></p></details>
+          <details><summary>대회에도 나갈 수 있나요?</summary><p>매년 8월 JBJ 유소년 농구대회, 12월 크리스마스 농구대회, 서울YMCA 바스켓타임 교류전이 있습니다. 2026년 제9회 대회에는 JBJ 7팀이 출전했습니다.</p></details>
+          <details><summary>주차할 수 있나요?</summary><p>서초본점은 주차가 가능하고, 산본퍼스트센터점은 무료 주차입니다. 용인노리터점은 <span class="ph">[확인]</span></p></details>
+          <details><summary>코트만 빌릴 수 있나요?</summary><p>서초본점 풀코트(22×14×8m)와 산본퍼스트센터점(2시간 13만 원부터) 대관이 가능합니다. 서초 대관료는 <span class="ph">[확인]</span></p></details>
+          <details><summary>발달장애가 있는 아이도 참여할 수 있나요?</summary><p>JBJ 블랙·골드 발달장애 농구팀이 있습니다. 자세한 내용은 <a href="#teams">팀 홈페이지 안내</a>를 확인해 주세요.</p></details>
         </div>
       </section>
 
@@ -525,7 +641,7 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
         </div>
       </section>
 
-      <div class="cta-card"><b>처음이라면, 체험부터</b><span>산본퍼스트센터점 1회 체험 수업 운영</span><a href="tel:050895952937">0508-9595-2937 →</a></div>
+      <div class="cta-card"><b>처음이라면, 체험부터</b><span>지점·학년·희망 시간을 남기면 담당 코치가 연락드립니다.</span><a href="#contact">문의 신청 →</a></div>
 
       <section id="rent" aria-labelledby="rent-t">
         <div class="sec-hd"><h2 id="rent-t">코트 대관</h2></div>
@@ -537,6 +653,8 @@ footer .draft{margin-top:16px;color:#8E8B84;font-size:12px}
     </aside>
   </div>
 </main>
+
+<div class="mbar" aria-label="빠른 문의"><a class="btn" href="tel:050714747723">전화</a><a class="btn gold" href="#contact">문의 신청</a></div>
 
 <footer>
   <div class="wrap ft">
@@ -555,9 +673,25 @@ const set=o=>{g.classList.toggle('open',o);m.setAttribute('aria-expanded',o);m.s
 m.addEventListener('click',()=>set(!g.classList.contains('open')));
 g.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
-const tabs=document.querySelectorAll('.tabs [role=tab]');
-const pick=(t,focus)=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1});document.querySelectorAll('.rec').forEach(p=>p.hidden=p.dataset.p!==t.dataset.t);if(focus)t.focus()};
-tabs.forEach((t,i)=>{t.addEventListener('click',()=>pick(t));t.addEventListener('keydown',e=>{const n=tabs.length;let j=null;if(e.key==='ArrowRight')j=(i+1)%n;else if(e.key==='ArrowLeft')j=(i-1+n)%n;else if(e.key==='Home')j=0;else if(e.key==='End')j=n-1;if(j!==null){e.preventDefault();pick(tabs[j],true)}})});
+const f=document.getElementById('cform'),done=document.getElementById('cdone');
+const kinds=f.querySelectorAll('input[name=kind]'),grade=document.getElementById('f-grade');
+kinds.forEach(k=>k.addEventListener('change',()=>{grade.hidden=f.kind.value==='코트 대관'}));
+const tel=document.getElementById('c-tel'),et=document.getElementById('e-tel'),ef=document.getElementById('e-form');
+const telOk=v=>/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(v.replace(/\s/g,''));
+f.addEventListener('input',e=>{if(e.target.getAttribute('aria-invalid')){e.target.removeAttribute('aria-invalid');if(e.target===tel)et.textContent=''}});
+f.addEventListener('submit',e=>{e.preventDefault();
+  const need=[['c-branch','지점을 선택해 주세요.'],['c-name','보호자 이름을 적어 주세요.'],['c-tel','연락처를 적어 주세요.']];
+  f.querySelectorAll('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'));
+  let first=null,msg='';
+  for(const [id,m] of need){const el=document.getElementById(id);if(!el.value.trim()){el.setAttribute('aria-invalid','true');if(!first){first=el;msg=m}}}
+  et.textContent='';if(!first&&!telOk(tel.value)){tel.setAttribute('aria-invalid','true');first=tel;msg='연락처를 010-1234-5678 형식으로 적어 주세요.';et.textContent=msg}
+  const ag=document.getElementById('c-agree');if(!first&&!ag.checked){first=ag;msg='개인정보 수집·이용에 동의해 주세요.'}
+  if(first){ef.textContent=msg;first.focus();return}
+  ef.textContent='';
+  const times=[...f.querySelectorAll('input[name=time]:checked')].map(x=>x.value).join(', ')||'시간 무관';
+  document.getElementById('cdone-sum').textContent=`${f.kind.value} · ${f.branch.value}${grade.hidden||!f.grade.value?'':' · '+f.grade.value} · ${times}`;
+  f.hidden=true;done.hidden=false;done.focus();
+});
 </script>
 </body>
 </html>
