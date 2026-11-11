@@ -614,3 +614,8 @@ footer .ph{background:rgba(201,167,90,.16);color:var(--gold)}
   .m-first b{font-size:15px;font-weight:600;color:#fff}
   .m-first>.i{width:18px;height:18px;color:var(--gold)}
 }
+/* 버튼 글자 줄바꿈 방지 */
+.btn{white-space:nowrap}
+@media (max-width:860px){
+  .lp-acts .btn{flex:1 1 auto;padding:0 18px}
+}
