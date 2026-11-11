@@ -607,3 +607,10 @@ footer .ph{background:rgba(201,167,90,.16);color:var(--gold)}
   .lp-meta div:first-child{border-top:0}
   .lp-meta dd{text-align:right}
 }
+/* 홈 → 첫 방문 페이지 진입 */
+@media (max-width:860px){
+  .m-first{display:flex;align-items:center;gap:12px;background:var(--black);border-radius:14px;padding:16px 18px;color:#fff;margin-top:-12px}
+  .m-first small{font-size:var(--t-xs);color:var(--gold);font-weight:600}
+  .m-first b{font-size:15px;font-weight:600;color:#fff}
+  .m-first>.i{width:18px;height:18px;color:var(--gold)}
+}
