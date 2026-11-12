@@ -646,3 +646,32 @@ footer .ph{background:rgba(201,167,90,.16);color:var(--gold)}
   .wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 }
 @media (max-width:860px){.lp-bar{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}}
+@media (max-width:860px){
+  .lp-bar{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  /* 홈: 사진을 더 크게, 글자와 줄 간격을 넉넉하게 */
+  .hero-in{padding-block:150px 40px;gap:12px}
+  .hero p{font-size:15px;line-height:1.6}
+  .m-quick{padding:18px 8px;gap:4px}
+  .m-first{padding:18px 20px}
+  .m-hd{margin-bottom:14px}
+  .m-row{padding:18px 18px;min-height:72px}
+  .m-t{gap:3px}
+  .m-t b{font-size:16px}
+  .m-t small,.m-ages span{font-size:13px}
+  .m-ages a{padding:18px 14px;gap:4px}
+  .m-stats{padding:20px 4px}
+  .m-stats span{font-size:12px}
+  .m-story{padding:26px 22px;gap:10px}
+  .m-teams a{padding:16px 14px;min-height:96px}
+  .m-teams span{font-size:12px}
+  /* 하위 페이지: 제목 영역과 본문 줄 간격 */
+  .page-hero{padding:32px 0 36px}
+  .page{padding-block:48px 64px}
+  .pg{padding:20px 0}
+  /* 첫 방문 */
+  .lp-hero-in{padding-block:96px 36px;gap:16px}
+  .lp-lead{font-size:15px;line-height:1.65}
+  .lp-worry p,.lp-start p{line-height:1.65}
+  .lp-flow li{padding:20px 0}
+}
+@media (max-width:860px){.m-row .m-t small{font-size:12px}}
