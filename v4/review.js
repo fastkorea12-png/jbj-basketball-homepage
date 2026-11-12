@@ -6,7 +6,7 @@
   var KEY = 'jbj-review-2026';
   var LOCAL = 'jbj-review-local';
   var NAME = 'jbj-reviewer';
-  var page = location.pathname.split('/').pop() || 'index.html';
+  var page = window.JBJ_REVIEW_PAGE || location.pathname.split('/').pop() || 'index.html';
   var view = function () { return innerWidth <= 860 ? '모바일' : 'PC'; };
 
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
