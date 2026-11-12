@@ -1,0 +1,56 @@
+/* 시안 검토 댓글 (review.js) — 운영 전 제거 */
+.rv-fab{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:24px;z-index:90;display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 18px;border:0;border-radius:999px;background:#2A63D9;color:#fff;font:600 15px/1 var(--sans);box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer}
+.rv-fab svg{width:20px;height:20px}
+.rv-fab[aria-expanded=true]{background:#1C1C1C}
+.rv-count{display:grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#fff;color:#2A63D9;font-size:12px}
+.rv-panel{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:84px;z-index:91;width:360px;max-height:calc(100vh - 120px);overflow:auto;background:#fff;color:#1A1A1A;border-radius:14px;box-shadow:0 16px 48px rgba(0,0,0,.28);padding:16px;display:flex;flex-direction:column;gap:12px;font:400 14px/1.5 var(--sans);text-align:left}
+.rv-hd{display:flex;justify-content:space-between;align-items:center}
+.rv-hd b{font-size:16px}
+.rv-x,.rv-cancel{background:none;border:1px solid #E2DFD8;border-radius:999px;height:32px;padding:0 12px;font:inherit;font-size:13px;color:#3D3B37;cursor:pointer}
+.rv-guide{background:#EEF3FD;color:#1E4BA8;border-radius:8px;padding:10px 12px;font-size:13px}
+.rv-form{display:flex;flex-direction:column;gap:6px;border:1px solid #2A63D9;border-radius:10px;padding:12px}
+.rv-target{font-size:13px;color:#1A1A1A;background:#F6F5F2;border-radius:6px;padding:8px 10px}
+.rv-target span{display:block;font-size:11px;color:#66635C;font-weight:600}
+.rv-l{font-size:12px;font-weight:600;color:#66635C;margin-top:4px}
+.rv-form textarea,.rv-form input{width:100%;font:inherit;font-size:16px;border:1px solid #D5D1C8;border-radius:8px;padding:8px 10px;color:#1A1A1A;background:#fff}
+.rv-form textarea:focus,.rv-form input:focus{outline:2px solid #2A63D9;outline-offset:0;border-color:transparent}
+.rv-acts{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}
+.rv-send{height:36px;padding:0 16px;border:0;border-radius:999px;background:#2A63D9;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.rv-send:disabled{opacity:.6}
+.rv-msg{font-size:13px;color:#B42318;min-height:0}
+.rv-msg:empty{display:none}
+.rv-list-hd{font-size:13px;font-weight:600;color:#66635C;border-top:1px solid #E2DFD8;padding-top:12px}
+.rv-n{color:#2A63D9}
+.rv-list{display:flex;flex-direction:column;gap:4px;list-style:none;margin:0;padding:0}
+.rv-list li{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:10px 8px;border-radius:8px;cursor:pointer}
+.rv-list li:hover,.rv-list li.rv-hl{background:#EEF3FD}
+.rv-list li.done{opacity:.55}
+.rv-list .rv-empty{display:block;color:#66635C;cursor:default}
+.rv-no{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#2A63D9;color:#fff;font-size:12px}
+.done .rv-no{background:#8E8B84}
+.rv-meta{font-size:12px;color:#66635C}
+.rv-meta em{font-style:normal;color:#1E7A3C;font-weight:600}
+.rv-body{color:#1A1A1A;white-space:pre-wrap;word-break:break-word}
+.rv-where{font-size:12px;color:#8E8B84}
+.rv-where i{font-style:normal;color:#B54708}
+.rv-foot{font-size:12px;color:#8E8B84}
+.rv-pins{position:absolute;top:0;left:0;width:0;height:0;z-index:80}
+.rv-pin{position:absolute;display:grid;place-items:center;width:28px;height:28px;border-radius:50% 50% 50% 4px;border:2px solid #fff;background:#2A63D9;color:#fff;font:700 12px/1 var(--sans);box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:pointer}
+.rv-pin.done{background:#8E8B84}
+.rv-on body *:not(.rv-panel):not(.rv-panel *):not(.rv-fab):not(.rv-fab *){cursor:crosshair}
+.rv-on :is(h1,h2,h3,h4,p,li,a,button,img,figure,article,label,dt,dd,blockquote,summary,legend,.btn):not(.rv-panel *):not(.rv-fab):not(.rv-fab *):not(.rv-pin):hover{outline:2px dashed #2A63D9;outline-offset:2px}
+.rv-target-el{outline:3px solid #2A63D9!important;outline-offset:2px}
+.rv-flash{animation:rv-flash 1.4s}
+@keyframes rv-flash{0%,60%{outline:3px solid #2A63D9;outline-offset:4px}100%{outline:3px solid transparent}}
+@media (max-width:860px){
+  .rv-fab{bottom:calc(var(--tab-h,64px) + 12px + env(safe-area-inset-bottom,0px));right:max(12px,env(safe-area-inset-right,0px));height:44px;padding:0 14px;font-size:14px}
+  .rv-panel{left:0;right:0;bottom:calc(var(--tab-h,64px) + env(safe-area-inset-bottom,0px));width:auto;max-height:62vh;border-radius:16px 16px 0 0;padding:14px max(16px,env(safe-area-inset-left,0px))}
+  .rv-on .rv-fab{display:none}
+}
+@media (prefers-reduced-motion:reduce){.rv-flash{animation:none}}
+/* 모바일: 의견 버튼을 작은 동그라미로 */
+@media (max-width:860px){
+  .rv-fab{width:48px;height:48px;padding:0;justify-content:center;position:fixed}
+  .rv-fab>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .rv-fab .rv-count{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;font-size:11px;border:2px solid #2A63D9}
+}

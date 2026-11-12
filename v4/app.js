@@ -26,3 +26,9 @@ f.addEventListener('submit',e=>{e.preventDefault();
   f.hidden=true;done.hidden=false;done.focus();
 });
 }
+/* 모바일: 아래로 스크롤하면 상단 헤더를 숨기고, 위로 올리면 다시 보여 준다 */
+(()=>{let y=scrollY,t=false;const mq=matchMedia('(max-width:860px)');
+addEventListener('scroll',()=>{if(t)return;t=true;requestAnimationFrame(()=>{const n=scrollY,b=document.body;
+  if(!mq.matches||n<80||document.body.classList.contains('sheet-open'))b.classList.remove('hd-hide');
+  else if(n>y+6)b.classList.add('hd-hide');else if(n<y-6)b.classList.remove('hd-hide');
+  y=n;t=false})},{passive:true})})();
